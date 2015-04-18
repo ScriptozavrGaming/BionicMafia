@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		126ADC701AE19BC30043DB9E /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126ADC6E1AE19BC30043DB9E /* MainMenuViewController.m */; };
+		126ADC761AE19C6F0043DB9E /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC751AE19C6F0043DB9E /* MainMenuViewController.xib */; };
+		126ADC7A1AE1D1F80043DB9E /* SetPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126ADC781AE1D1F80043DB9E /* SetPlayersViewController.m */; };
+		126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126ADC7D1AE1D20F0043DB9E /* NewGameViewController.m */; };
+		126ADC831AE1D2710043DB9E /* NewGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC811AE1D2710043DB9E /* NewGameViewController.xib */; };
+		126ADC841AE1D2710043DB9E /* SetPlayersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */; };
+		126ADC891AE1D7DB0043DB9E /* SetPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 126ADC871AE1D7DB0043DB9E /* SetPlayerTableViewCell.m */; };
+		126ADC8A1AE1D7DB0043DB9E /* SetPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC881AE1D7DB0043DB9E /* SetPlayerTableViewCell.xib */; };
 		3AD7E8061ACFD4B00001914E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E8051ACFD4B00001914E /* main.m */; };
 		3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E8081ACFD4B00001914E /* AppDelegate.m */; };
 		3AD7E80C1ACFD4B00001914E /* Mafia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E80A1ACFD4B00001914E /* Mafia.xcdatamodeld */; };
-		3AD7E80F1ACFD4B00001914E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E80E1ACFD4B00001914E /* ViewController.m */; };
-		3AD7E8121ACFD4B00001914E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD7E8101ACFD4B00001914E /* Main.storyboard */; };
 		3AD7E8141ACFD4B00001914E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD7E8131ACFD4B00001914E /* Images.xcassets */; };
 		3AD7E8171ACFD4B00001914E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD7E8151ACFD4B00001914E /* LaunchScreen.xib */; };
 		3AD7E8231ACFD4B00001914E /* MafiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E8221ACFD4B00001914E /* MafiaTests.m */; };
@@ -28,15 +34,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		126ADC6D1AE19BC30043DB9E /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		126ADC6E1AE19BC30043DB9E /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		126ADC751AE19C6F0043DB9E /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		126ADC771AE1D1F80043DB9E /* SetPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPlayersViewController.h; sourceTree = "<group>"; };
+		126ADC781AE1D1F80043DB9E /* SetPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPlayersViewController.m; sourceTree = "<group>"; };
+		126ADC7C1AE1D20F0043DB9E /* NewGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGameViewController.h; sourceTree = "<group>"; };
+		126ADC7D1AE1D20F0043DB9E /* NewGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGameViewController.m; sourceTree = "<group>"; };
+		126ADC811AE1D2710043DB9E /* NewGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGameViewController.xib; sourceTree = "<group>"; };
+		126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPlayersViewController.xib; sourceTree = "<group>"; };
+		126ADC861AE1D7DB0043DB9E /* SetPlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPlayerTableViewCell.h; sourceTree = "<group>"; };
+		126ADC871AE1D7DB0043DB9E /* SetPlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPlayerTableViewCell.m; sourceTree = "<group>"; };
+		126ADC881AE1D7DB0043DB9E /* SetPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPlayerTableViewCell.xib; sourceTree = "<group>"; };
 		3AD7E8001ACFD4B00001914E /* Mafia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mafia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD7E8041ACFD4B00001914E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD7E8051ACFD4B00001914E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3AD7E8071ACFD4B00001914E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3AD7E8081ACFD4B00001914E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3AD7E80B1ACFD4B00001914E /* Mafia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mafia.xcdatamodel; sourceTree = "<group>"; };
-		3AD7E80D1ACFD4B00001914E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3AD7E80E1ACFD4B00001914E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3AD7E8111ACFD4B00001914E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AD7E8131ACFD4B00001914E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3AD7E8161ACFD4B00001914E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3AD7E81C1ACFD4B00001914E /* MafiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +77,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		126ADC6A1AE19AC30043DB9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		126ADC6C1AE19ADF0043DB9E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				126ADC6D1AE19BC30043DB9E /* MainMenuViewController.h */,
+				126ADC6E1AE19BC30043DB9E /* MainMenuViewController.m */,
+				126ADC771AE1D1F80043DB9E /* SetPlayersViewController.h */,
+				126ADC781AE1D1F80043DB9E /* SetPlayersViewController.m */,
+				126ADC7C1AE1D20F0043DB9E /* NewGameViewController.h */,
+				126ADC7D1AE1D20F0043DB9E /* NewGameViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		126ADC741AE19C650043DB9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				126ADC751AE19C6F0043DB9E /* MainMenuViewController.xib */,
+				126ADC811AE1D2710043DB9E /* NewGameViewController.xib */,
+				126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		126ADC851AE1D7600043DB9E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				126ADC861AE1D7DB0043DB9E /* SetPlayerTableViewCell.h */,
+				126ADC871AE1D7DB0043DB9E /* SetPlayerTableViewCell.m */,
+				126ADC881AE1D7DB0043DB9E /* SetPlayerTableViewCell.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3AD7E7F71ACFD4B00001914E = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +138,12 @@
 		3AD7E8021ACFD4B00001914E /* Mafia */ = {
 			isa = PBXGroup;
 			children = (
+				126ADC851AE1D7600043DB9E /* Resources */,
+				126ADC741AE19C650043DB9E /* Views */,
+				126ADC6C1AE19ADF0043DB9E /* Controllers */,
+				126ADC6A1AE19AC30043DB9E /* Models */,
 				3AD7E8071ACFD4B00001914E /* AppDelegate.h */,
 				3AD7E8081ACFD4B00001914E /* AppDelegate.m */,
-				3AD7E80D1ACFD4B00001914E /* ViewController.h */,
-				3AD7E80E1ACFD4B00001914E /* ViewController.m */,
-				3AD7E8101ACFD4B00001914E /* Main.storyboard */,
 				3AD7E8131ACFD4B00001914E /* Images.xcassets */,
 				3AD7E8151ACFD4B00001914E /* LaunchScreen.xib */,
 				3AD7E80A1ACFD4B00001914E /* Mafia.xcdatamodeld */,
@@ -202,8 +258,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AD7E8121ACFD4B00001914E /* Main.storyboard in Resources */,
+				126ADC841AE1D2710043DB9E /* SetPlayersViewController.xib in Resources */,
+				126ADC8A1AE1D7DB0043DB9E /* SetPlayerTableViewCell.xib in Resources */,
 				3AD7E8171ACFD4B00001914E /* LaunchScreen.xib in Resources */,
+				126ADC831AE1D2710043DB9E /* NewGameViewController.xib in Resources */,
+				126ADC761AE19C6F0043DB9E /* MainMenuViewController.xib in Resources */,
 				3AD7E8141ACFD4B00001914E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,9 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				126ADC701AE19BC30043DB9E /* MainMenuViewController.m in Sources */,
+				126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */,
+				126ADC891AE1D7DB0043DB9E /* SetPlayerTableViewCell.m in Sources */,
 				3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */,
 				3AD7E8061ACFD4B00001914E /* main.m in Sources */,
-				3AD7E80F1ACFD4B00001914E /* ViewController.m in Sources */,
+				126ADC7A1AE1D1F80043DB9E /* SetPlayersViewController.m in Sources */,
 				3AD7E80C1ACFD4B00001914E /* Mafia.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,14 +310,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3AD7E8101ACFD4B00001914E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3AD7E8111ACFD4B00001914E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3AD7E8151ACFD4B00001914E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,6 +470,7 @@
 				3AD7E8281ACFD4B00001914E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3AD7E8291ACFD4B00001914E /* Build configuration list for PBXNativeTarget "MafiaTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +479,7 @@
 				3AD7E82B1ACFD4B00001914E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

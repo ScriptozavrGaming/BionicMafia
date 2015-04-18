@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenuViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs3-dk-hBm">
+                    <rect key="frame" x="145" y="29" width="86" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oln-OX-gp2">
+                    <rect key="frame" x="0.0" y="162" width="375" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="New Game">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="newGameButtonTouched:" destination="-2" eventType="touchDown" id="31R-5U-sR3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5f-V9-RxB">
+                    <rect key="frame" x="0.0" y="200" width="375" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Set Players">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="setPlayersButtonTouched:" destination="-2" eventType="touchDown" id="Le7-Sj-n7E"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ3-pW-nLZ">
+                    <rect key="frame" x="0.0" y="238" width="375" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Statistic">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acq-1q-gbr">
+                    <rect key="frame" x="0.0" y="276" width="375" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Rules">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndm-SM-dhY">
+                    <rect key="frame" x="0.0" y="314" width="375" height="36"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="List Of All Players">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IJ3-pW-nLZ" firstAttribute="width" secondItem="Oln-OX-gp2" secondAttribute="width" id="1w2-AC-it0"/>
+                <constraint firstItem="IJ3-pW-nLZ" firstAttribute="top" secondItem="a5f-V9-RxB" secondAttribute="bottom" constant="2" id="4dD-dO-i3E"/>
+                <constraint firstItem="Oln-OX-gp2" firstAttribute="top" secondItem="Vs3-dk-hBm" secondAttribute="bottom" constant="112" id="9Hx-8x-fMq"/>
+                <constraint firstAttribute="centerX" secondItem="Vs3-dk-hBm" secondAttribute="centerX" id="CfU-4C-Qba"/>
+                <constraint firstItem="IJ3-pW-nLZ" firstAttribute="centerX" secondItem="Oln-OX-gp2" secondAttribute="centerX" id="KqV-Sz-hPt"/>
+                <constraint firstItem="a5f-V9-RxB" firstAttribute="width" secondItem="Oln-OX-gp2" secondAttribute="width" id="RB5-vL-ajo"/>
+                <constraint firstItem="Vs3-dk-hBm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="cUZ-nj-045"/>
+                <constraint firstItem="acq-1q-gbr" firstAttribute="width" secondItem="Oln-OX-gp2" secondAttribute="width" id="eTo-ce-04e"/>
+                <constraint firstItem="a5f-V9-RxB" firstAttribute="centerX" secondItem="Oln-OX-gp2" secondAttribute="centerX" id="gme-rn-LGt"/>
+                <constraint firstItem="Oln-OX-gp2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hJG-cv-zD1"/>
+                <constraint firstItem="ndm-SM-dhY" firstAttribute="top" secondItem="acq-1q-gbr" secondAttribute="bottom" constant="2" id="jYT-dm-T44"/>
+                <constraint firstItem="ndm-SM-dhY" firstAttribute="top" secondItem="acq-1q-gbr" secondAttribute="bottom" constant="4" id="prB-F3-Fn5"/>
+                <constraint firstItem="a5f-V9-RxB" firstAttribute="top" secondItem="Oln-OX-gp2" secondAttribute="bottom" constant="2" id="tZ5-Rg-Gkg"/>
+                <constraint firstItem="acq-1q-gbr" firstAttribute="centerX" secondItem="Oln-OX-gp2" secondAttribute="centerX" id="tjb-p8-gRw"/>
+                <constraint firstItem="ndm-SM-dhY" firstAttribute="centerX" secondItem="Oln-OX-gp2" secondAttribute="centerX" id="uHK-jc-LpH"/>
+                <constraint firstItem="ndm-SM-dhY" firstAttribute="width" secondItem="Oln-OX-gp2" secondAttribute="width" id="weE-Bb-jMc"/>
+                <constraint firstAttribute="trailing" secondItem="Oln-OX-gp2" secondAttribute="trailing" id="xIW-S5-eUg"/>
+                <constraint firstItem="acq-1q-gbr" firstAttribute="top" secondItem="IJ3-pW-nLZ" secondAttribute="bottom" constant="2" id="xoy-hx-rRT"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="prB-F3-Fn5"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
