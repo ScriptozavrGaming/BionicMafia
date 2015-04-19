@@ -10,7 +10,7 @@
 #import "NewGameViewController.h"
 #import "SetPlayersViewController.h"
 
-@interface MainMenuViewController ()
+@interface MainMenuViewController () 
 
 @end
 
