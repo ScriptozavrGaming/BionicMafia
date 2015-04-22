@@ -24,6 +24,7 @@ NSInteger const kCountOfPlayers = 10;
 @end
 
 NSString *const kNameNotification2 = @"changePlayerInfo";
+NSString *const kUnsetPlayer = @"Unset";
 
 @implementation SetPlayersViewController
 
@@ -41,6 +42,10 @@ NSString *const kNameNotification2 = @"changePlayerInfo";
     if([notification.name isEqualToString:kNameNotification2])
     {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.choosedControllerIndex inSection:0];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
+        request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:YES]];
+        NSError *error = nil;
+        NSArray *results = [self.mainContext executeFetchRequest:request error:&error];
         AddOrChoosePlayerViewController *tempController = self.addOrChooseControllers[self.choosedControllerIndex];
         NewPlayerTabViewController *forNickname = (NewPlayerTabViewController *)tempController.selectedViewController;
         [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = forNickname.nicknameTextField.text;
@@ -95,7 +100,7 @@ NSString *const kNameNotification2 = @"changePlayerInfo";
 //    cell.numberLabel.text = [NSString stringWithFormat:@"Player %@",[@(indexPath.row + 1) stringValue]];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"setPlayerCell"];
     cell.textLabel.text = [NSString stringWithFormat:@"Player %@",[@(indexPath.row + 1) stringValue]];
-    cell.detailTextLabel.text = @"BANDERA";
+    cell.detailTextLabel.text = kUnsetPlayer;
     cell.detailTextLabel.textColor = [UIColor redColor];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
@@ -106,7 +111,9 @@ NSString *const kNameNotification2 = @"changePlayerInfo";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.choosedControllerIndex = indexPath.row;
-    [[self navigationController] pushViewController:self.addOrChooseControllers[indexPath.row] animated:YES];
+    AddOrChoosePlayerViewController *controller = self.addOrChooseControllers[indexPath.row];
+    controller.mainContext = self.mainContext;
+    [[self navigationController] pushViewController:controller animated:YES];
 }
 
 @end

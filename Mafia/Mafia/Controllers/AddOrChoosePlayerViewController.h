@@ -16,5 +16,6 @@
 @property (nonatomic, strong) IBOutlet UITabBarItem *addTabBarItem;
 @property (nonatomic, strong) IBOutlet UITabBarItem *existTabBarItem;
 @property (nonatomic, strong) UIViewController *selectedViewController;
+@property (nonatomic) NSManagedObjectContext *mainContext;
 
 @end

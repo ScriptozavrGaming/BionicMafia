@@ -9,12 +9,14 @@
 #import "AddOrChoosePlayerViewController.h"
 #import "NewPlayerTabViewController.h"
 #import "ExistPlayerViewController.h"
+#import "Player.h"
 
 @interface AddOrChoosePlayerViewController () <UITabBarDelegate>
 
 @end
 
 NSString *const kNameNotification = @"changePlayerInfo";
+NSString *const kUnknownData = @"unknown";
 
 @implementation AddOrChoosePlayerViewController
 
@@ -70,7 +72,11 @@ NSString *const kNameNotification = @"changePlayerInfo";
 
 - (IBAction)savePlayer:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotification object:self];
+    [self saveToCoreData];
+    if (![((NewPlayerTabViewController *)self.selectedViewController).nicknameTextField.text isEqualToString:@""])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotification object:self];
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -107,5 +113,53 @@ NSString *const kNameNotification = @"changePlayerInfo";
     }
 }
 
+- (void)saveToCoreData
+{
+    Player *newPlayer = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:self.mainContext];
+    NewPlayerTabViewController *newPlayerController = (NewPlayerTabViewController *)selectedViewController;
+    if(![newPlayerController.firstNameTextField.text isEqual:@""])
+    {
+        newPlayer.firstName = newPlayerController.firstNameTextField.text;
+    }
+    else
+    {
+        newPlayer.firstName = kUnknownData;
+    }
+    if(![newPlayerController.lastNameTextField.text isEqual:@""])
+    {
+        newPlayer.lastName = newPlayerController.lastNameTextField.text;
+    }
+    else
+    {
+        newPlayer.lastName = kUnknownData;
+    }
+    if(![newPlayerController.emailTextField.text isEqual:@""])
+    {
+        newPlayer.email = newPlayerController.emailTextField.text;
+    }
+    else
+    {
+        newPlayer.email = kUnknownData;
+    }
+    if(![newPlayerController.phoneTextField.text isEqual:@""])
+    {
+        NSDecimalNumber *phone = [[NSDecimalNumber alloc] initWithString:newPlayerController.phoneTextField.text];
+        newPlayer.phone = phone;
+    }
+    else
+    {
+        newPlayer.phone = 0;
+    }
+    if(![newPlayerController.nicknameTextField.text isEqual:@""])
+    {
+        newPlayer.nickname = newPlayerController.nicknameTextField.text;
+    }
+    else
+    {
+        newPlayer.nickname = @"Unset";
+    }
+    NSError *error = nil;
+    [self.mainContext save:&error];
+}
 
 @end
