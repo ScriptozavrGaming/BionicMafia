@@ -79,6 +79,11 @@ NSString *const kUnknownData = @"unknown";
             [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotification object:self];
         }
         [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Input error"
+                message:@"Nickname needed" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        [view show];
+        
     }
 }
 
