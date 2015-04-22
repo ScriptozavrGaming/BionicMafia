@@ -8,6 +8,7 @@
 
 #import "SetPlayersViewController.h"
 #import "AddOrChoosePlayerViewController.h"
+#import "NewPlayerTabViewController.h"
 #import "AppDelegate.h"
 
 
@@ -17,21 +18,33 @@ NSInteger const kCountOfPlayers = 10;
 
 @property (weak, nonatomic) IBOutlet UITableView *playersTableView;
 @property (nonatomic, readonly) NSManagedObjectContext *mainContext;
-@property (nonatomic) AddOrChoosePlayerViewController *addOrChooseController;
+@property (nonatomic) NSInteger choosedControllerIndex;
+@property (nonatomic, strong) NSMutableArray *addOrChooseControllers;
 
 @end
+
+NSString *const kNameNotification2 = @"changePlayerInfo";
 
 @implementation SetPlayersViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [_playersTableView registerNib:[UINib nibWithNibName:@"SetPlayerTableViewCell" bundle:nil] forCellReuseIdentifier:@"setPlayerCell"];
     [[self navigationController] setNavigationBarHidden:NO];
     self.title = @"Set Players";
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:@selector(savePlayers:)];
     self.navigationItem.rightBarButtonItem = saveButton;
-    self.addOrChooseController = [[AddOrChoosePlayerViewController alloc] initWithNibName:@"AddOrChoosePlayerViewController" bundle:nil];
-    // Do any additional setup after loading the view from its nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:kNameNotification2 object:nil];
+}
+
+- (void)recieveNotification:(NSNotification *)notification
+{
+    if([notification.name isEqualToString:kNameNotification2])
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.choosedControllerIndex inSection:0];
+        AddOrChoosePlayerViewController *tempController = self.addOrChooseControllers[self.choosedControllerIndex];
+        NewPlayerTabViewController *forNickname = (NewPlayerTabViewController *)tempController.selectedViewController;
+        [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = forNickname.nicknameTextField.text;
+    }
 }
 
 - (void)savePlayers:(id)sender
@@ -46,6 +59,18 @@ NSInteger const kCountOfPlayers = 10;
     }
 }
 
+- (NSMutableArray *)addOrChooseControllers
+{
+    if(nil == _addOrChooseControllers)
+    {
+        _addOrChooseControllers = [[NSMutableArray alloc] init];
+        for(NSInteger index = 0; index<10; index++)
+        {
+            [_addOrChooseControllers addObject:[[AddOrChoosePlayerViewController alloc] initWithNibName:@"AddOrChoosePlayerViewController" bundle:nil]];
+        }
+    }
+    return _addOrChooseControllers;
+}
 
 - (NSManagedObjectContext *)mainContext
 {
@@ -80,7 +105,8 @@ NSInteger const kCountOfPlayers = 10;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[self navigationController] pushViewController:self.addOrChooseController animated:YES];
+    self.choosedControllerIndex = indexPath.row;
+    [[self navigationController] pushViewController:self.addOrChooseControllers[indexPath.row] animated:YES];
 }
 
 @end

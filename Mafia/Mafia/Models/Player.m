@@ -2,12 +2,11 @@
 //  Player.m
 //  Mafia
 //
-//  Created by AlexFill on 19.04.15.
+//  Created by AlexFill on 20.04.15.
 //  Copyright (c) 2015 bionic. All rights reserved.
 //
 
 #import "Player.h"
-#import "Game.h"
 
 
 @implementation Player
@@ -18,6 +17,6 @@
 @dynamic nickname;
 @dynamic phone;
 @dynamic rating;
-@dynamic game;
+@dynamic gameinfoplayer;
 
 @end

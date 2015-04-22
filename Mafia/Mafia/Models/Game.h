@@ -2,14 +2,14 @@
 //  Game.h
 //  Mafia
 //
-//  Created by AlexFill on 19.04.15.
+//  Created by AlexFill on 20.04.15.
 //  Copyright (c) 2015 bionic. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Player;
+@class PlayerInGame;
 
 @interface Game : NSManagedObject
 
@@ -19,8 +19,8 @@
 
 @interface Game (CoreDataGeneratedAccessors)
 
-- (void)addPlayersObject:(Player *)value;
-- (void)removePlayersObject:(Player *)value;
+- (void)addPlayersObject:(PlayerInGame *)value;
+- (void)removePlayersObject:(PlayerInGame *)value;
 - (void)addPlayers:(NSSet *)values;
 - (void)removePlayers:(NSSet *)values;
 

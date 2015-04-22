@@ -6,6 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewPlayerTabViewController">
             <connections>
+                <outlet property="emailTextField" destination="gTo-WB-whK" id="U2K-vk-eSK"/>
+                <outlet property="firstNameTextField" destination="3cd-b1-ha8" id="xSG-wa-5xI"/>
+                <outlet property="lastNameTextField" destination="32G-Lu-TEX" id="BFH-cs-p2C"/>
+                <outlet property="nicknameTextField" destination="tAI-qM-lw9" id="un5-wk-HJX"/>
+                <outlet property="phoneTextField" destination="dDA-Oa-BCi" id="yTU-SC-hBK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

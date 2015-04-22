@@ -14,6 +14,8 @@
 
 @end
 
+NSString *const kNameNotification = @"changePlayerInfo";
+
 @implementation AddOrChoosePlayerViewController
 
 @synthesize viewControllers;
@@ -53,6 +55,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"Add New Player";
     [[self tabBar] setSelectedItem:addTabBarItem];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:@selector(savePlayer:)];
@@ -67,7 +70,8 @@
 
 - (IBAction)savePlayer:(id)sender
 {
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotification object:self];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)playerChoosed:(id)sender

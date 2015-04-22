@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122D6F421AE4FD0C006D06EC /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 122D6F411AE4FD0C006D06EC /* Player.m */; };
+		122D6F451AE4FD0D006D06EC /* PlayerInGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 122D6F441AE4FD0D006D06EC /* PlayerInGame.m */; };
+		122D6F481AE4FD0D006D06EC /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 122D6F471AE4FD0D006D06EC /* Game.m */; };
 		1268E6F71AE3DCB900319757 /* AddOrChoosePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1268E6F51AE3DCB900319757 /* AddOrChoosePlayerViewController.m */; };
-		1268E6FC1AE3DD3300319757 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1268E6FB1AE3DD3300319757 /* Game.m */; };
-		1268E6FF1AE3DD3400319757 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1268E6FE1AE3DD3400319757 /* Player.m */; };
 		1268E7011AE3DD7200319757 /* AddOrChoosePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1268E7001AE3DD7200319757 /* AddOrChoosePlayerViewController.xib */; };
 		1268E7031AE3F9FB00319757 /* plus-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1268E7021AE3F9FB00319757 /* plus-simple-7.png */; };
 		1268E7051AE3FA6100319757 /* circle-user-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1268E7041AE3FA6100319757 /* circle-user-7.png */; };
@@ -43,12 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		122D6F401AE4FD0C006D06EC /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		122D6F411AE4FD0C006D06EC /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		122D6F431AE4FD0D006D06EC /* PlayerInGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInGame.h; sourceTree = "<group>"; };
+		122D6F441AE4FD0D006D06EC /* PlayerInGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInGame.m; sourceTree = "<group>"; };
+		122D6F461AE4FD0D006D06EC /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		122D6F471AE4FD0D006D06EC /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		1268E6F41AE3DCB900319757 /* AddOrChoosePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrChoosePlayerViewController.h; sourceTree = "<group>"; };
 		1268E6F51AE3DCB900319757 /* AddOrChoosePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrChoosePlayerViewController.m; sourceTree = "<group>"; };
-		1268E6FA1AE3DD3300319757 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		1268E6FB1AE3DD3300319757 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		1268E6FD1AE3DD3300319757 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		1268E6FE1AE3DD3400319757 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		1268E7001AE3DD7200319757 /* AddOrChoosePlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddOrChoosePlayerViewController.xib; sourceTree = "<group>"; };
 		1268E7021AE3F9FB00319757 /* plus-simple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-simple-7.png"; sourceTree = "<group>"; };
 		1268E7041AE3FA6100319757 /* circle-user-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-user-7.png"; sourceTree = "<group>"; };
@@ -103,10 +106,12 @@
 		1268E6F91AE3DD1900319757 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1268E6FD1AE3DD3300319757 /* Player.h */,
-				1268E6FE1AE3DD3400319757 /* Player.m */,
-				1268E6FA1AE3DD3300319757 /* Game.h */,
-				1268E6FB1AE3DD3300319757 /* Game.m */,
+				122D6F461AE4FD0D006D06EC /* Game.h */,
+				122D6F471AE4FD0D006D06EC /* Game.m */,
+				122D6F431AE4FD0D006D06EC /* PlayerInGame.h */,
+				122D6F441AE4FD0D006D06EC /* PlayerInGame.m */,
+				122D6F401AE4FD0C006D06EC /* Player.h */,
+				122D6F411AE4FD0C006D06EC /* Player.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,14 +335,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122D6F481AE4FD0D006D06EC /* Game.m in Sources */,
 				1268E7431AE42DBC00319757 /* NewPlayerTabViewController.m in Sources */,
 				126ADC701AE19BC30043DB9E /* MainMenuViewController.m in Sources */,
 				1268E74A1AE42E1B00319757 /* ExistPlayerViewController.m in Sources */,
 				126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */,
 				128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */,
 				3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */,
-				1268E6FC1AE3DD3300319757 /* Game.m in Sources */,
-				1268E6FF1AE3DD3400319757 /* Player.m in Sources */,
+				122D6F421AE4FD0C006D06EC /* Player.m in Sources */,
+				122D6F451AE4FD0D006D06EC /* PlayerInGame.m in Sources */,
 				3AD7E8061ACFD4B00001914E /* main.m in Sources */,
 				1268E6F71AE3DCB900319757 /* AddOrChoosePlayerViewController.m in Sources */,
 				126ADC7A1AE1D1F80043DB9E /* SetPlayersViewController.m in Sources */,

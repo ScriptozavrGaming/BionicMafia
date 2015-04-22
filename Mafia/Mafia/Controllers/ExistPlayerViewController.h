@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ExistPlayerViewController : UIViewController
-
+@property (nonatomic) NSString *choosenPlayer;
 @end
