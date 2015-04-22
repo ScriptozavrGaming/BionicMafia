@@ -10,4 +10,5 @@
 
 @interface ExistPlayerViewController : UIViewController
 @property (nonatomic) NSString *choosenPlayer;
+@property (nonatomic, weak) NSManagedObjectContext *mainContext;
 @end

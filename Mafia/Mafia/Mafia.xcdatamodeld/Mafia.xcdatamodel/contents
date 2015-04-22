@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14D131" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Game" representedClassName="Game" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerInGame" inverseName="game" inverseEntity="PlayerInGame" syncable="YES"/>
@@ -9,7 +9,7 @@
         <attribute name="firstName" optional="YES" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="gameinfoplayer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerInGame" inverseName="player" inverseEntity="PlayerInGame" syncable="YES"/>
     </entity>

@@ -69,9 +69,11 @@ NSString *const kUnsetPlayer = @"Unset";
     if(nil == _addOrChooseControllers)
     {
         _addOrChooseControllers = [[NSMutableArray alloc] init];
-        for(NSInteger index = 0; index<10; index++)
+        for(NSInteger index = 0; index < 10; index++)
         {
+            
             [_addOrChooseControllers addObject:[[AddOrChoosePlayerViewController alloc] initWithNibName:@"AddOrChoosePlayerViewController" bundle:nil]];
+//            AddOrChoosePlayerViewController *controller
         }
     }
     return _addOrChooseControllers;

@@ -33,6 +33,7 @@ NSString *const kUnknownData = @"unknown";
     {
         NewPlayerTabViewController *newPlayerTab = [[NewPlayerTabViewController alloc] initWithNibName:@"NewPlayerTabViewController" bundle:nil];
         ExistPlayerViewController *existPlayerTab = [[ExistPlayerViewController alloc] initWithNibName:@"ExistPlayerViewController" bundle:nil];
+        
         NSArray *controllers = [NSArray arrayWithObjects:newPlayerTab,existPlayerTab, nil];
         self.viewControllers = controllers;
         [self.view addSubview:newPlayerTab.view];
@@ -72,12 +73,13 @@ NSString *const kUnknownData = @"unknown";
 
 - (IBAction)savePlayer:(id)sender
 {
-    [self saveToCoreData];
-    if (![((NewPlayerTabViewController *)self.selectedViewController).nicknameTextField.text isEqualToString:@""])
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotification object:self];
+    if ([self saveToCoreData] == YES) {
+        if (![((NewPlayerTabViewController *)self.selectedViewController).nicknameTextField.text isEqualToString:@""])
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotification object:self];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)playerChoosed:(id)sender
@@ -107,59 +109,52 @@ NSString *const kUnknownData = @"unknown";
         NSArray *rightBarItems = @[doneButton,searchButton];
         self.navigationItem.rightBarButtonItems = rightBarItems;
         ExistPlayerViewController *existPlayerTab =[viewControllers objectAtIndex:1];
+        existPlayerTab.mainContext = self.mainContext;
         [self.selectedViewController.view removeFromSuperview];
         [self.view addSubview:existPlayerTab.view];
         selectedViewController = existPlayerTab;
     }
 }
 
-- (void)saveToCoreData
+bool isEmptyString(NSString * str){
+    
+    return [str isEqualToString:@""];
+}
+
+- (BOOL)saveToCoreData
 {
     Player *newPlayer = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:self.mainContext];
     NewPlayerTabViewController *newPlayerController = (NewPlayerTabViewController *)selectedViewController;
-    if(![newPlayerController.firstNameTextField.text isEqual:@""])
-    {
-        newPlayer.firstName = newPlayerController.firstNameTextField.text;
-    }
-    else
-    {
-        newPlayer.firstName = kUnknownData;
-    }
-    if(![newPlayerController.lastNameTextField.text isEqual:@""])
-    {
-        newPlayer.lastName = newPlayerController.lastNameTextField.text;
-    }
-    else
-    {
-        newPlayer.lastName = kUnknownData;
-    }
-    if(![newPlayerController.emailTextField.text isEqual:@""])
-    {
-        newPlayer.email = newPlayerController.emailTextField.text;
-    }
-    else
-    {
-        newPlayer.email = kUnknownData;
-    }
-    if(![newPlayerController.phoneTextField.text isEqual:@""])
-    {
-        NSDecimalNumber *phone = [[NSDecimalNumber alloc] initWithString:newPlayerController.phoneTextField.text];
-        newPlayer.phone = phone;
-    }
-    else
-    {
-        newPlayer.phone = 0;
-    }
-    if(![newPlayerController.nicknameTextField.text isEqual:@""])
+
+    if(!isEmptyString(newPlayerController.nicknameTextField.text))
     {
         newPlayer.nickname = newPlayerController.nicknameTextField.text;
     }
     else
     {
-        newPlayer.nickname = @"Unset";
+        return NO;
     }
+    
+    newPlayer.firstName = (!isEmptyString(newPlayerController.firstNameTextField.text)) ?
+        newPlayerController.firstNameTextField.text : kUnknownData;
+
+    
+    newPlayer.lastName = (!isEmptyString(newPlayerController.lastNameTextField.text)) ?
+        newPlayerController.lastNameTextField.text : kUnknownData;
+
+    
+    newPlayer.email = (!isEmptyString(newPlayerController.lastNameTextField.text)) ?
+        newPlayerController.emailTextField.text : kUnknownData;
+
+    
+    
+    newPlayer.phone = (!isEmptyString(newPlayerController.phoneTextField.text)) ?
+        newPlayerController.phoneTextField.text : kUnknownData;
+
+    
     NSError *error = nil;
     [self.mainContext save:&error];
+    return YES;
 }
 
 @end
