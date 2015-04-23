@@ -32,20 +32,22 @@ NSString *const kUnsetPlayer = @"Unset";
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO];
     self.title = @"Set Players";
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:@selector(savePlayers:)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePlayers:)];
     self.navigationItem.rightBarButtonItem = saveButton;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:kNameNotification2 object:nil];
 }
+
+
 
 - (void)recieveNotification:(NSNotification *)notification
 {
     if([notification.name isEqualToString:kNameNotification2])
     {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.choosedControllerIndex inSection:0];
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
-        request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:YES]];
-        NSError *error = nil;
-        NSArray *results = [self.mainContext executeFetchRequest:request error:&error];
+//        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
+//        request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:YES]];
+//        NSError *error = nil;
+//        NSArray *results = [self.mainContext executeFetchRequest:request error:&error];
         AddOrChoosePlayerViewController *tempController = self.addOrChooseControllers[self.choosedControllerIndex];
         NewPlayerTabViewController *forNickname = (NewPlayerTabViewController *)tempController.selectedViewController;
         [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = forNickname.nicknameTextField.text;
@@ -54,13 +56,25 @@ NSString *const kUnsetPlayer = @"Unset";
 
 - (void)savePlayers:(id)sender
 {
+    BOOL isUnset = NO;
     for(NSUInteger i = 0; i<10; i++)
     {
-//        NSString *temp = nil;
-//        NSIndexPath *a = [NSIndexPath indexPathForItem:i inSection:0];
-//        temp = ((SetPlayerTableViewCell *)[_playersTableView cellForRowAtIndexPath:a]).nicknameTextField.text;
-//        
-//        NSLog(@"%@ \n",temp);
+        NSString *nickname = nil;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+        nickname = [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text;
+        if([nickname isEqualToString:kUnsetPlayer])
+        {
+            isUnset = YES;
+        }
+    }
+    if(isUnset)
+    {
+        UIAlertView *allert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Some players don't set" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [allert show];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

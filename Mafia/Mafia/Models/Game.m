@@ -14,5 +14,6 @@
 
 @dynamic name;
 @dynamic players;
+@dynamic number;
 
 @end

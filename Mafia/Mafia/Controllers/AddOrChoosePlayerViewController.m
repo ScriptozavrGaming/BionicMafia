@@ -61,7 +61,7 @@ NSString *const kUnknownData = @"unknown";
     
     self.title = @"Add New Player";
     [[self tabBar] setSelectedItem:addTabBarItem];
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:@selector(savePlayer:)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePlayer:)];
     self.navigationItem.rightBarButtonItem = saveButton;
     // Do any additional setup after loading the view from its nib.
 }
@@ -81,7 +81,7 @@ NSString *const kUnknownData = @"unknown";
         [self.navigationController popViewControllerAnimated:YES];
     }else{
         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Input error"
-                message:@"Nickname needed" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                message:@"Nickname needed" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [view show];
         
     }
