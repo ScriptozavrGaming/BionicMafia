@@ -9,7 +9,10 @@
 #import "SetPlayersViewController.h"
 #import "AddOrChoosePlayerViewController.h"
 #import "NewPlayerTabViewController.h"
+#import "ExistPlayerViewController.h"
 #import "AppDelegate.h"
+#import "PlayerInGame.h"
+#import "Game.h"
 
 
 NSInteger const kCountOfPlayers = 10;
@@ -23,7 +26,8 @@ NSInteger const kCountOfPlayers = 10;
 
 @end
 
-NSString *const kNameNotification2 = @"changePlayerInfo";
+NSString *const kNameNotificationNewPlayer = @"changePlayerInfo";
+NSString *const kNameNotificationExistPlayer = @"choosePlayer";
 NSString *const kUnsetPlayer = @"Unset";
 
 @implementation SetPlayersViewController
@@ -34,23 +38,26 @@ NSString *const kUnsetPlayer = @"Unset";
     self.title = @"Set Players";
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePlayers:)];
     self.navigationItem.rightBarButtonItem = saveButton;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:kNameNotification2 object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:kNameNotificationNewPlayer object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:kNameNotificationExistPlayer object:nil];
 }
 
 
 
 - (void)recieveNotification:(NSNotification *)notification
 {
-    if([notification.name isEqualToString:kNameNotification2])
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.choosedControllerIndex inSection:0];
+    AddOrChoosePlayerViewController *tempController = self.addOrChooseControllers[self.choosedControllerIndex];
+    
+    if([notification.name isEqualToString:kNameNotificationNewPlayer])
     {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.choosedControllerIndex inSection:0];
-//        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
-//        request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"rating" ascending:YES]];
-//        NSError *error = nil;
-//        NSArray *results = [self.mainContext executeFetchRequest:request error:&error];
-        AddOrChoosePlayerViewController *tempController = self.addOrChooseControllers[self.choosedControllerIndex];
         NewPlayerTabViewController *forNickname = (NewPlayerTabViewController *)tempController.selectedViewController;
         [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = forNickname.nicknameTextField.text;
+    }
+    if([notification.name isEqualToString:kNameNotificationExistPlayer])
+    {
+        ExistPlayerViewController *forNickname = (ExistPlayerViewController *)tempController.selectedViewController;
+        [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text = forNickname.choosenPlayer;
     }
 }
 
@@ -74,6 +81,14 @@ NSString *const kUnsetPlayer = @"Unset";
     }
     else
     {
+        for (NSUInteger i = 0; i<10; i++)
+        {
+            NSString *nickname = nil;
+            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+            nickname = [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text;
+            PlayerInGame *gameInfo = [NSEntityDescription insertNewObjectForEntityForName:@"PlayerInGame" inManagedObjectContext:self.mainContext];
+            gameInfo.number = @(i + 1);
+        }
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

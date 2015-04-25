@@ -15,7 +15,8 @@
 
 @end
 
-NSString *const kNameNotification = @"changePlayerInfo";
+NSString *const kNameNotificationAdd = @"changePlayerInfo";
+NSString *const kNameNotificationChoose = @"choosePlayer";
 NSString *const kUnknownData = @"unknown";
 
 @implementation AddOrChoosePlayerViewController
@@ -41,20 +42,6 @@ NSString *const kUnknownData = @"unknown";
     }
     return self;
 }
-//- (instancetype)init
-//{
-//    self = [super init];
-//    if(nil != self)
-//    {
-//        NewPlayerTabViewController *newPlayerTab = [[NewPlayerTabViewController alloc] initWithNibName:@"NewPlayerTabViewController" bundle:nil];
-//        ExistPlayerViewController *existPlayerTab = [[ExistPlayerViewController alloc] initWithNibName:@"ExistPlayerViewController" bundle:nil];
-//        NSArray *controllers = [NSArray arrayWithObjects:newPlayerTab,existPlayerTab, nil];
-//        self.viewControllers = controllers;
-//        [self.view addSubview:newPlayerTab.view];
-//        self.selectedViewController = newPlayerTab;
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,12 +63,12 @@ NSString *const kUnknownData = @"unknown";
     if ([self saveToCoreData] == YES) {
         if (![((NewPlayerTabViewController *)self.selectedViewController).nicknameTextField.text isEqualToString:@""])
         {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotification object:self];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotificationAdd object:self];
         }
         [self.navigationController popViewControllerAnimated:YES];
     }else{
         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Input error"
-                message:@"Nickname needed" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                message:@"Nickname needed or player with this nickname already exist" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [view show];
         
     }
@@ -89,7 +76,8 @@ NSString *const kUnknownData = @"unknown";
 
 - (IBAction)playerChoosed:(id)sender
 {
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNameNotificationChoose object:self];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
@@ -98,7 +86,7 @@ NSString *const kUnknownData = @"unknown";
     {
         self.title = @"Add New Player";
         self.navigationItem.rightBarButtonItems = nil;
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:@selector(savePlayer:)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePlayer:)];
         self.navigationItem.rightBarButtonItem = saveButton;
         NewPlayerTabViewController *newPlayerTab =[viewControllers objectAtIndex:0];
         [self.selectedViewController.view removeFromSuperview];
@@ -109,8 +97,8 @@ NSString *const kUnknownData = @"unknown";
     {
         self.title = @"Choose Exist Player";
         self.navigationItem.rightBarButtonItems = nil;
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:@selector(playerChoosed:)];
-        UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:nil action:@selector(playerChoosed:)];
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(playerChoosed:)];
+        UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(playerChoosed:)];
         NSArray *rightBarItems = @[doneButton,searchButton];
         self.navigationItem.rightBarButtonItems = rightBarItems;
         ExistPlayerViewController *existPlayerTab =[viewControllers objectAtIndex:1];
@@ -121,10 +109,12 @@ NSString *const kUnknownData = @"unknown";
     }
 }
 
-bool isEmptyString(NSString * str){
-    
+bool isEmptyString(NSString * str)
+{
     return [str isEqualToString:@""];
 }
+
+
 
 - (BOOL)saveToCoreData
 {
@@ -133,7 +123,14 @@ bool isEmptyString(NSString * str){
 
     if(!isEmptyString(newPlayerController.nicknameTextField.text))
     {
-        newPlayer.nickname = newPlayerController.nicknameTextField.text;
+        if(![self isPlayerExistWithNickname:newPlayerController.nicknameTextField.text])
+        {
+            newPlayer.nickname = newPlayerController.nicknameTextField.text;
+        }
+        else
+        {
+            return NO;
+        }
     }
     else
     {
@@ -161,5 +158,16 @@ bool isEmptyString(NSString * str){
     [self.mainContext save:&error];
     return YES;
 }
+
+- (BOOL)isPlayerExistWithNickname:(NSString *)aNickname
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"nickname == %@", aNickname];
+    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"nickname" ascending:YES]];
+    [request setPredicate:predicate];
+    NSError *error = nil;
+    return [self.mainContext executeFetchRequest:request error:&error].count>0;
+}
+
 
 @end
