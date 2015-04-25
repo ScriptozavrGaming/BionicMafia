@@ -24,13 +24,12 @@
     self.players = [self.mainContext executeFetchRequest:request error:&error];
 }
 
+#pragma mark - picker view data source
 
-// returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
 
-// returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return self.players.count;
 }
@@ -42,7 +41,12 @@
     return res;
 }
 
+#pragma mark - picker view delegate
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.choosenPlayer = [self.players[row] nickname];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
