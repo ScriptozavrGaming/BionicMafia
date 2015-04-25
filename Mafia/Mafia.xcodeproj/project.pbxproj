@@ -25,6 +25,7 @@
 		126ADC831AE1D2710043DB9E /* NewGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC811AE1D2710043DB9E /* NewGameViewController.xib */; };
 		126ADC841AE1D2710043DB9E /* SetPlayersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */; };
 		128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 128433C61AE2E7A100189028 /* CoreDataManager.m */; };
+		3AD6BDE01AEB95AF0062D1F9 /* Game+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6BDDF1AEB95AF0062D1F9 /* Game+Extension.m */; };
 		3AD7E8061ACFD4B00001914E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E8051ACFD4B00001914E /* main.m */; };
 		3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E8081ACFD4B00001914E /* AppDelegate.m */; };
 		3AD7E80C1ACFD4B00001914E /* Mafia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E80A1ACFD4B00001914E /* Mafia.xcdatamodeld */; };
@@ -72,6 +73,8 @@
 		126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPlayersViewController.xib; sourceTree = "<group>"; };
 		128433C51AE2E7A100189028 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		128433C61AE2E7A100189028 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		3AD6BDDE1AEB95AF0062D1F9 /* Game+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+Extension.h"; sourceTree = "<group>"; };
+		3AD6BDDF1AEB95AF0062D1F9 /* Game+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Game+Extension.m"; sourceTree = "<group>"; };
 		3AD7E8001ACFD4B00001914E /* Mafia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mafia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD7E8041ACFD4B00001914E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD7E8051ACFD4B00001914E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				122D6F441AE4FD0D006D06EC /* PlayerInGame.m */,
 				122D6F401AE4FD0C006D06EC /* Player.h */,
 				122D6F411AE4FD0C006D06EC /* Player.m */,
+				3AD6BDDE1AEB95AF0062D1F9 /* Game+Extension.h */,
+				3AD6BDDF1AEB95AF0062D1F9 /* Game+Extension.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */,
 				128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */,
 				3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */,
+				3AD6BDE01AEB95AF0062D1F9 /* Game+Extension.m in Sources */,
 				122D6F421AE4FD0C006D06EC /* Player.m in Sources */,
 				122D6F451AE4FD0D006D06EC /* PlayerInGame.m in Sources */,
 				3AD7E8061ACFD4B00001914E /* main.m in Sources */,
