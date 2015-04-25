@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString * role;
 @property (nonatomic, retain) NSNumber * faults;
 @property (nonatomic, retain) NSNumber * score;
-@property (nonatomic, retain) NSSet *game;
+@property (nonatomic, retain) Game *game;
 @property (nonatomic, retain) Player *player;
 @end
 

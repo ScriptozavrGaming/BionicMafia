@@ -12,7 +12,8 @@
 #import "ExistPlayerViewController.h"
 #import "AppDelegate.h"
 #import "PlayerInGame.h"
-#import "Game.h"
+#import "Player+Extension.h"
+#import "Game+Extension.h"
 
 
 NSInteger const kCountOfPlayers = 10;
@@ -28,7 +29,7 @@ NSInteger const kCountOfPlayers = 10;
 
 NSString *const kNameNotificationNewPlayer = @"changePlayerInfo";
 NSString *const kNameNotificationExistPlayer = @"choosePlayer";
-NSString *const kUnsetPlayer = @"Unset";
+NSString *const kUnsetPlayer = @"1";
 
 @implementation SetPlayersViewController
 
@@ -69,7 +70,8 @@ NSString *const kUnsetPlayer = @"Unset";
         NSString *nickname = nil;
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         nickname = [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text;
-        if([nickname isEqualToString:kUnsetPlayer])
+//        if([nickname isEqualToString:kUnsetPlayer])
+        if (YES)
         {
             isUnset = YES;
         }
@@ -81,16 +83,35 @@ NSString *const kUnsetPlayer = @"Unset";
     }
     else
     {
+        Game *game = [Game currentGame:self.mainContext];
+        NSMutableSet *players = [NSMutableSet new];
         for (NSUInteger i = 0; i<10; i++)
         {
             NSString *nickname = nil;
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
             nickname = [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text;
-            PlayerInGame *gameInfo = [NSEntityDescription insertNewObjectForEntityForName:@"PlayerInGame" inManagedObjectContext:self.mainContext];
-            gameInfo.number = @(i + 1);
+            Player *player = [Player playerForNickName:nickname inContext:self.mainContext];
+            PlayerInGame *playerInfo = [NSEntityDescription insertNewObjectForEntityForName:@"PlayerInGame" inManagedObjectContext:self.mainContext];
+            playerInfo.number = @(i + 1);
+            playerInfo.game = game;
+            playerInfo.score = @0;
+            playerInfo.role = @"";
+            playerInfo.faults = @0;
+            playerInfo.player = player;
+            
+            [players addObject:playerInfo];
         }
+        [game removePlayers:game.players];
+        [game addPlayers:players];
         [self.navigationController popViewControllerAnimated:YES];
+        [self.mainContext save:nil];
     }
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Game"];
+    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES]];
+    NSError *error = nil;
+    NSArray* games = [self.mainContext executeFetchRequest:request error:&error];
+
 }
 
 - (NSMutableArray *)addOrChooseControllers

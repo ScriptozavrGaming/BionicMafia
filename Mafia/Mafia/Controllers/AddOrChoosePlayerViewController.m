@@ -118,13 +118,14 @@ bool isEmptyString(NSString * str)
 
 - (BOOL)saveToCoreData
 {
-    Player *newPlayer = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:self.mainContext];
+    Player *newPlayer = nil;
     NewPlayerTabViewController *newPlayerController = (NewPlayerTabViewController *)selectedViewController;
 
     if(!isEmptyString(newPlayerController.nicknameTextField.text))
     {
         if(![self isPlayerExistWithNickname:newPlayerController.nicknameTextField.text])
         {
+            newPlayer = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:self.mainContext];
             newPlayer.nickname = newPlayerController.nicknameTextField.text;
         }
         else

@@ -27,7 +27,7 @@
     
     game.name = [NSString stringWithFormat:@"Game %@" ,game.number];
 
-    [context save:nil];
+//    [context save:nil];
     return game;
 }
 

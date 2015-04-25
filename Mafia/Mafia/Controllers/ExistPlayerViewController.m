@@ -22,6 +22,7 @@
     request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"nickname" ascending:YES]];
     NSError *error = nil;
     self.players = [self.mainContext executeFetchRequest:request error:&error];
+    self.choosenPlayer = [self.players[0]  nickname];
 }
 
 #pragma mark - picker view data source
