@@ -10,4 +10,6 @@
 
 @interface NewGameViewController : UIViewController
 
+@property (nonatomic) NSManagedObjectContext *mainContext;
+
 @end

@@ -18,6 +18,7 @@
 NSString *const kNameNotificationAdd = @"changePlayerInfo";
 NSString *const kNameNotificationChoose = @"choosePlayer";
 NSString *const kUnknownData = @"unknown";
+CGFloat const kTabBarHeight = 49;
 
 @implementation AddOrChoosePlayerViewController
 
@@ -33,6 +34,7 @@ NSString *const kUnknownData = @"unknown";
     if(nil != self)
     {
         NewPlayerTabViewController *newPlayerTab = [[NewPlayerTabViewController alloc] initWithNibName:@"NewPlayerTabViewController" bundle:nil];
+        
         ExistPlayerViewController *existPlayerTab = [[ExistPlayerViewController alloc] initWithNibName:@"ExistPlayerViewController" bundle:nil];
         
         NSArray *controllers = [NSArray arrayWithObjects:newPlayerTab,existPlayerTab, nil];
@@ -50,6 +52,7 @@ NSString *const kUnknownData = @"unknown";
     [[self tabBar] setSelectedItem:addTabBarItem];
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePlayer:)];
     self.navigationItem.rightBarButtonItem = saveButton;
+
     // Do any additional setup after loading the view from its nib.
 }
 

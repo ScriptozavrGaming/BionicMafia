@@ -9,8 +9,13 @@
 #import "MainMenuViewController.h"
 #import "NewGameViewController.h"
 #import "SetPlayersViewController.h"
+#import "AppDelegate.h"
+#import "Game+Extension.h"
 
 @interface MainMenuViewController () 
+
+@property (nonatomic,readonly) NSManagedObjectContext *mainContext;
+
 
 @end
 
@@ -18,9 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // Do any additional setup after loading the view from its nib.
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -35,13 +42,28 @@
 - (IBAction)setPlayersButtonTouched:(id)sender
 {
     SetPlayersViewController *setPlayersController = [SetPlayersViewController new];
+    setPlayersController.mainContext = self.mainContext;
     [[self navigationController] pushViewController:setPlayersController animated:YES];
 }
 
 - (IBAction)newGameButtonTouched:(id)sender
 {
-    NewGameViewController *newGameController = [NewGameViewController new];
-    [[self navigationController] pushViewController:newGameController animated:YES];
+    if([[[[Game currentGame:self.mainContext] players] allObjects] count]<10)
+    {
+        UIAlertView *allert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Set players need" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [allert show];
+    }
+    else
+    {
+        NewGameViewController *newGameController = [NewGameViewController new];
+        newGameController.mainContext = self.mainContext;
+        [[self navigationController] pushViewController:newGameController animated:YES];
+    }
+}
+
+- (NSManagedObjectContext *)mainContext
+{
+    return [[[AppDelegate sharedAppDelegate] coreDataManager] managedObjectContext];
 }
 
 /*

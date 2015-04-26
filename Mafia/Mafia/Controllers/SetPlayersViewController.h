@@ -10,4 +10,6 @@
 
 @interface SetPlayersViewController : UIViewController
 
+@property (nonatomic) NSManagedObjectContext *mainContext;
+
 @end

@@ -2,7 +2,7 @@
 //  Game.h
 //  Mafia
 //
-//  Created by AlexFill on 20.04.15.
+//  Created by AlexFill on 25.04.15.
 //  Copyright (c) 2015 bionic. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @interface Game : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *players;
 @property (nonatomic, retain) NSNumber * number;
+@property (nonatomic, retain) NSSet *players;
 @end
 
 @interface Game (CoreDataGeneratedAccessors)

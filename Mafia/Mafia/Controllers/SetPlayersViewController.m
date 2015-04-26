@@ -10,7 +10,6 @@
 #import "AddOrChoosePlayerViewController.h"
 #import "NewPlayerTabViewController.h"
 #import "ExistPlayerViewController.h"
-#import "AppDelegate.h"
 #import "PlayerInGame.h"
 #import "Player+Extension.h"
 #import "Game+Extension.h"
@@ -21,7 +20,7 @@ NSInteger const kCountOfPlayers = 10;
 @interface SetPlayersViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *playersTableView;
-@property (nonatomic, readonly) NSManagedObjectContext *mainContext;
+
 @property (nonatomic) NSInteger choosedControllerIndex;
 @property (nonatomic, strong) NSMutableArray *addOrChooseControllers;
 
@@ -29,7 +28,7 @@ NSInteger const kCountOfPlayers = 10;
 
 NSString *const kNameNotificationNewPlayer = @"changePlayerInfo";
 NSString *const kNameNotificationExistPlayer = @"choosePlayer";
-NSString *const kUnsetPlayer = @"1";
+NSString *const kUnsetPlayer = @"Unset";
 
 @implementation SetPlayersViewController
 
@@ -71,7 +70,7 @@ NSString *const kUnsetPlayer = @"1";
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         nickname = [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text;
 //        if([nickname isEqualToString:kUnsetPlayer])
-        if (YES)
+        if (NO)
         {
             isUnset = YES;
         }
@@ -97,6 +96,7 @@ NSString *const kUnsetPlayer = @"1";
             playerInfo.score = @0;
             playerInfo.role = @"";
             playerInfo.faults = @0;
+            [player addGameinfoplayerObject:playerInfo];
             playerInfo.player = player;
             
             [players addObject:playerInfo];
@@ -107,10 +107,10 @@ NSString *const kUnsetPlayer = @"1";
         [self.mainContext save:nil];
     }
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Game"];
-    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES]];
-    NSError *error = nil;
-    NSArray* games = [self.mainContext executeFetchRequest:request error:&error];
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Game"];
+//    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES]];
+//    NSError *error = nil;
+//    NSArray* games = [self.mainContext executeFetchRequest:request error:&error];
 
 }
 
@@ -129,10 +129,7 @@ NSString *const kUnsetPlayer = @"1";
     return _addOrChooseControllers;
 }
 
-- (NSManagedObjectContext *)mainContext
-{
-    return [[[AppDelegate sharedAppDelegate] coreDataManager] managedObjectContext];
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

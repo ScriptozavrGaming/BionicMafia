@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewGameViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetRolesViewController">
             <connections>
-                <outlet property="playersTableView" destination="K3a-tp-UjL" id="ZKn-6y-sZK"/>
+                <outlet property="rolesTableView" destination="8vc-NS-Bry" id="Pff-Fr-PL5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,24 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="K3a-tp-UjL">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8vc-NS-Bry">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="GyK-mu-SUE"/>
-                        <outlet property="delegate" destination="-1" id="z1w-mR-4nz"/>
+                        <outlet property="dataSource" destination="-1" id="UfN-nm-Zer"/>
+                        <outlet property="delegate" destination="-1" id="IQh-xH-O2I"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="K3a-tp-UjL" secondAttribute="trailing" id="2Tj-Uq-MD4"/>
-                <constraint firstItem="K3a-tp-UjL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YO9-Xd-6QT"/>
-                <constraint firstAttribute="bottom" secondItem="K3a-tp-UjL" secondAttribute="bottom" id="Yik-4c-wvJ"/>
-                <constraint firstItem="K3a-tp-UjL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hd6-0t-TM2"/>
+                <constraint firstItem="8vc-NS-Bry" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="02X-57-7cF"/>
+                <constraint firstAttribute="trailing" secondItem="8vc-NS-Bry" secondAttribute="trailing" id="Jhb-xA-fKa"/>
+                <constraint firstItem="8vc-NS-Bry" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aDd-Lu-IgP"/>
+                <constraint firstAttribute="bottom" secondItem="8vc-NS-Bry" secondAttribute="bottom" id="o0B-QF-H0d"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="304.5" y="341.5"/>
         </view>
     </objects>
 </document>
