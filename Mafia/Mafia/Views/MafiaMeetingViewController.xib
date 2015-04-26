@@ -1,19 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MafiaMeetingViewController">
             <connections>
+                <outlet property="nextButton" destination="eSU-Qa-jVb" id="O5J-aq-VSH"/>
+                <outlet property="pauseButton" destination="kno-Mg-bli" id="wTB-6c-XZQ"/>
+                <outlet property="startButton" destination="PHe-w2-1dB" id="i2T-TM-L60"/>
+                <outlet property="timerLabel" destination="9II-3P-j4A" id="PtG-xg-L2I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9II-3P-j4A">
+                    <rect key="frame" x="0.0" y="70" width="320" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHe-w2-1dB">
+                    <rect key="frame" x="0.0" y="179" width="320" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Start">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="startButtonTouched:" destination="-2" eventType="touchDown" id="b5R-oi-ZiU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kno-Mg-bli">
+                    <rect key="frame" x="0.0" y="223" width="320" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Pause">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pauseButtonTouched:" destination="-2" eventType="touchDown" id="Vh9-ZT-enb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-Qa-jVb">
+                    <rect key="frame" x="0.0" y="267" width="320" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="next">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nexeTouched:" destination="-2" eventType="touchDown" id="j5i-3f-ngm"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9II-3P-j4A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="05a-EM-a5e"/>
+                <constraint firstItem="eSU-Qa-jVb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1b4-kM-Q1l"/>
+                <constraint firstAttribute="trailing" secondItem="kno-Mg-bli" secondAttribute="trailing" id="AJ8-XM-epF"/>
+                <constraint firstItem="PHe-w2-1dB" firstAttribute="centerX" secondItem="kno-Mg-bli" secondAttribute="centerX" id="Fhb-RY-THd"/>
+                <constraint firstAttribute="trailing" secondItem="eSU-Qa-jVb" secondAttribute="trailing" id="I5R-tG-yC7"/>
+                <constraint firstItem="PHe-w2-1dB" firstAttribute="width" secondItem="eSU-Qa-jVb" secondAttribute="width" id="IOT-FD-ThC"/>
+                <constraint firstItem="PHe-w2-1dB" firstAttribute="width" secondItem="kno-Mg-bli" secondAttribute="width" id="JEa-5h-YD4"/>
+                <constraint firstAttribute="trailing" secondItem="PHe-w2-1dB" secondAttribute="trailing" id="bkS-DS-SCa"/>
+                <constraint firstItem="PHe-w2-1dB" firstAttribute="top" secondItem="9II-3P-j4A" secondAttribute="bottom" constant="49" id="jKZ-kx-Mbe"/>
+                <constraint firstItem="eSU-Qa-jVb" firstAttribute="top" secondItem="kno-Mg-bli" secondAttribute="bottom" constant="8" symbolic="YES" id="miq-TH-DRW"/>
+                <constraint firstItem="PHe-w2-1dB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ofc-kd-vmM"/>
+                <constraint firstItem="9II-3P-j4A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="ov1-Gt-UHv"/>
+                <constraint firstAttribute="trailing" secondItem="9II-3P-j4A" secondAttribute="trailing" id="qU1-zx-CPU"/>
+                <constraint firstItem="kno-Mg-bli" firstAttribute="top" secondItem="PHe-w2-1dB" secondAttribute="bottom" constant="8" symbolic="YES" id="ss2-dP-m8b"/>
+                <constraint firstItem="PHe-w2-1dB" firstAttribute="centerX" secondItem="eSU-Qa-jVb" secondAttribute="centerX" id="u0A-NY-hUB"/>
+                <constraint firstItem="kno-Mg-bli" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yth-vf-4nb"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
 </document>

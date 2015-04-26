@@ -1,5 +1,5 @@
 //
-//  MafiaMeetingViewController.h
+//  MorningViewController.h
 //  Mafia
 //
 //  Created by AlexFill on 26.04.15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MafiaMeetingViewController : UIViewController
+@interface MorningViewController : UIViewController
 
 @property (nonatomic) NSManagedObjectContext *mainContext;
 

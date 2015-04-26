@@ -2,7 +2,7 @@
 //  Game.m
 //  Mafia
 //
-//  Created by AlexFill on 25.04.15.
+//  Created by AlexFill on 26.04.15.
 //  Copyright (c) 2015 bionic. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 @dynamic name;
 @dynamic number;
+@dynamic round;
 @dynamic players;
 
 @end

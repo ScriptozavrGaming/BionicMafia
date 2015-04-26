@@ -24,11 +24,15 @@
 		127E633E1AED160100A729C2 /* PlayerInGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E633D1AED160100A729C2 /* PlayerInGame.m */; };
 		127E63421AED18A200A729C2 /* MafiaMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63401AED18A200A729C2 /* MafiaMeetingViewController.m */; };
 		127E63451AED19E200A729C2 /* MafiaMeetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E63441AED19E200A729C2 /* MafiaMeetingViewController.xib */; };
+		127E63491AED245400A729C2 /* MorningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63471AED245400A729C2 /* MorningViewController.m */; };
+		127E634C1AED246A00A729C2 /* MorningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E634B1AED246A00A729C2 /* MorningViewController.xib */; };
+		127E63501AED2BF900A729C2 /* ButtonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E634E1AED2BF900A729C2 /* ButtonsTableViewCell.m */; };
+		127E63511AED2BF900A729C2 /* ButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */; };
+		127E63541AED354100A729C2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63531AED354100A729C2 /* Game.m */; };
 		128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 128433C61AE2E7A100189028 /* CoreDataManager.m */; };
 		12858BD41AEBBE9A005982E8 /* SetRolesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12858BD21AEBBE9A005982E8 /* SetRolesViewController.m */; };
 		12858BD71AEBBED4005982E8 /* SetRolesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12858BD61AEBBED4005982E8 /* SetRolesViewController.xib */; };
 		12858BE61AEBC6A2005982E8 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 12858BE51AEBC6A2005982E8 /* Player.m */; };
-		12858BE91AEBC6A2005982E8 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 12858BE81AEBC6A2005982E8 /* Game.m */; };
 		3AD6BDE01AEB95AF0062D1F9 /* Game+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6BDDF1AEB95AF0062D1F9 /* Game+Extension.m */; };
 		3AD6BDE31AEB9BAA0062D1F9 /* Player+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6BDE21AEB9BAA0062D1F9 /* Player+Extension.m */; };
 		3AD7E8061ACFD4B00001914E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7E8051ACFD4B00001914E /* main.m */; };
@@ -75,6 +79,14 @@
 		127E633F1AED18A200A729C2 /* MafiaMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MafiaMeetingViewController.h; sourceTree = "<group>"; };
 		127E63401AED18A200A729C2 /* MafiaMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MafiaMeetingViewController.m; sourceTree = "<group>"; };
 		127E63441AED19E200A729C2 /* MafiaMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MafiaMeetingViewController.xib; sourceTree = "<group>"; };
+		127E63461AED245400A729C2 /* MorningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorningViewController.h; sourceTree = "<group>"; };
+		127E63471AED245400A729C2 /* MorningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorningViewController.m; sourceTree = "<group>"; };
+		127E634B1AED246A00A729C2 /* MorningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MorningViewController.xib; sourceTree = "<group>"; };
+		127E634D1AED2BF900A729C2 /* ButtonsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsTableViewCell.h; sourceTree = "<group>"; };
+		127E634E1AED2BF900A729C2 /* ButtonsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsTableViewCell.m; sourceTree = "<group>"; };
+		127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsTableViewCell.xib; sourceTree = "<group>"; };
+		127E63521AED354100A729C2 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		127E63531AED354100A729C2 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		128433C51AE2E7A100189028 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		128433C61AE2E7A100189028 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		12858BD11AEBBE9A005982E8 /* SetRolesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRolesViewController.h; sourceTree = "<group>"; };
@@ -82,8 +94,6 @@
 		12858BD61AEBBED4005982E8 /* SetRolesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetRolesViewController.xib; sourceTree = "<group>"; };
 		12858BE41AEBC6A2005982E8 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		12858BE51AEBC6A2005982E8 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		12858BE71AEBC6A2005982E8 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		12858BE81AEBC6A2005982E8 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		3AD6BDDE1AEB95AF0062D1F9 /* Game+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+Extension.h"; sourceTree = "<group>"; };
 		3AD6BDDF1AEB95AF0062D1F9 /* Game+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Game+Extension.m"; sourceTree = "<group>"; };
 		3AD6BDE11AEB9BAA0062D1F9 /* Player+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+Extension.h"; sourceTree = "<group>"; };
@@ -122,10 +132,10 @@
 		1268E6F91AE3DD1900319757 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				127E63521AED354100A729C2 /* Game.h */,
+				127E63531AED354100A729C2 /* Game.m */,
 				127E633C1AED160100A729C2 /* PlayerInGame.h */,
 				127E633D1AED160100A729C2 /* PlayerInGame.m */,
-				12858BE71AEBC6A2005982E8 /* Game.h */,
-				12858BE81AEBC6A2005982E8 /* Game.m */,
 				12858BE41AEBC6A2005982E8 /* Player.h */,
 				12858BE51AEBC6A2005982E8 /* Player.m */,
 				3AD6BDDE1AEB95AF0062D1F9 /* Game+Extension.h */,
@@ -155,6 +165,8 @@
 				12858BD21AEBBE9A005982E8 /* SetRolesViewController.m */,
 				127E633F1AED18A200A729C2 /* MafiaMeetingViewController.h */,
 				127E63401AED18A200A729C2 /* MafiaMeetingViewController.m */,
+				127E63461AED245400A729C2 /* MorningViewController.h */,
+				127E63471AED245400A729C2 /* MorningViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +174,7 @@
 		126ADC741AE19C650043DB9E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				127E634B1AED246A00A729C2 /* MorningViewController.xib */,
 				126ADC751AE19C6F0043DB9E /* MainMenuViewController.xib */,
 				126ADC811AE1D2710043DB9E /* NewGameViewController.xib */,
 				126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */,
@@ -188,6 +201,9 @@
 			children = (
 				128433C51AE2E7A100189028 /* CoreDataManager.h */,
 				128433C61AE2E7A100189028 /* CoreDataManager.m */,
+				127E634D1AED2BF900A729C2 /* ButtonsTableViewCell.h */,
+				127E634E1AED2BF900A729C2 /* ButtonsTableViewCell.m */,
+				127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -334,10 +350,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127E634C1AED246A00A729C2 /* MorningViewController.xib in Resources */,
 				126ADC841AE1D2710043DB9E /* SetPlayersViewController.xib in Resources */,
 				3AD7E8171ACFD4B00001914E /* LaunchScreen.xib in Resources */,
 				1268E7031AE3F9FB00319757 /* plus-simple-7.png in Resources */,
 				12858BD71AEBBED4005982E8 /* SetRolesViewController.xib in Resources */,
+				127E63511AED2BF900A729C2 /* ButtonsTableViewCell.xib in Resources */,
 				1268E7051AE3FA6100319757 /* circle-user-7.png in Resources */,
 				127E63451AED19E200A729C2 /* MafiaMeetingViewController.xib in Resources */,
 				126ADC831AE1D2710043DB9E /* NewGameViewController.xib in Resources */,
@@ -365,17 +383,19 @@
 			files = (
 				1268E7431AE42DBC00319757 /* NewPlayerTabViewController.m in Sources */,
 				126ADC701AE19BC30043DB9E /* MainMenuViewController.m in Sources */,
+				127E63501AED2BF900A729C2 /* ButtonsTableViewCell.m in Sources */,
 				12858BD41AEBBE9A005982E8 /* SetRolesViewController.m in Sources */,
 				1268E74A1AE42E1B00319757 /* ExistPlayerViewController.m in Sources */,
 				12858BE61AEBC6A2005982E8 /* Player.m in Sources */,
+				127E63491AED245400A729C2 /* MorningViewController.m in Sources */,
 				126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */,
 				128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */,
 				127E63421AED18A200A729C2 /* MafiaMeetingViewController.m in Sources */,
 				127E633E1AED160100A729C2 /* PlayerInGame.m in Sources */,
 				3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */,
 				3AD6BDE01AEB95AF0062D1F9 /* Game+Extension.m in Sources */,
+				127E63541AED354100A729C2 /* Game.m in Sources */,
 				3AD7E8061ACFD4B00001914E /* main.m in Sources */,
-				12858BE91AEBC6A2005982E8 /* Game.m in Sources */,
 				1268E6F71AE3DCB900319757 /* AddOrChoosePlayerViewController.m in Sources */,
 				126ADC7A1AE1D1F80043DB9E /* SetPlayersViewController.m in Sources */,
 				3AD7E80C1ACFD4B00001914E /* Mafia.xcdatamodeld in Sources */,

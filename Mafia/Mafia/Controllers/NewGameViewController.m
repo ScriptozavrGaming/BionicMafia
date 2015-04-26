@@ -8,6 +8,7 @@
 
 #import "NewGameViewController.h"
 #import "SetRolesViewController.h"
+#import "MafiaMeetingViewController.h"
 #import "Game+Extension.h"
 #import "PlayerInGame.h"
 #import "Player.h"
@@ -86,15 +87,19 @@ NSString *const kNameNotificationRolesChanged = @"roleChanged";
 
 - (IBAction)savePlayersWithRoles:(id)sender
 {
-    for(NSInteger i = 0; i < 10; i++){
+    for(NSInteger i = 0; i < 10; i++)
+    {
         NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
         NSString *str = [self.playersTableView cellForRowAtIndexPath:path].detailTextLabel.text;
         
         ((PlayerInGame*)self.players[i]).role = str;
-        
     }
     NSError *error = nil;
     [self.mainContext save:&error];
+    MafiaMeetingViewController *mafiaMeetingController = [MafiaMeetingViewController new];
+    mafiaMeetingController.mainContext = self.mainContext;
+    [self.navigationController pushViewController:mafiaMeetingController animated:YES];
+    
 }
 
 - (NSMutableArray *)setRolesControllers
@@ -136,6 +141,8 @@ NSString *const kNameNotificationRolesChanged = @"roleChanged";
 {
     self.index = indexPath.row;
     [self.navigationController pushViewController:self.setRolesControllers[indexPath.row] animated:YES];
+    
+    [[self.playersTableView cellForRowAtIndexPath:indexPath] setSelected:NO];
 }
 
 
