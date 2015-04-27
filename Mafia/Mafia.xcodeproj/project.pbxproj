@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124755A01AEE88BF00214BF4 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1247559F1AEE88BF00214BF4 /* Game.m */; };
+		124755A31AEE88C000214BF4 /* PlayerInGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 124755A21AEE88C000214BF4 /* PlayerInGame.m */; };
 		1268E6F71AE3DCB900319757 /* AddOrChoosePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1268E6F51AE3DCB900319757 /* AddOrChoosePlayerViewController.m */; };
 		1268E7011AE3DD7200319757 /* AddOrChoosePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1268E7001AE3DD7200319757 /* AddOrChoosePlayerViewController.xib */; };
 		1268E7031AE3F9FB00319757 /* plus-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1268E7021AE3F9FB00319757 /* plus-simple-7.png */; };
@@ -21,16 +23,19 @@
 		126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 126ADC7D1AE1D20F0043DB9E /* NewGameViewController.m */; };
 		126ADC831AE1D2710043DB9E /* NewGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC811AE1D2710043DB9E /* NewGameViewController.xib */; };
 		126ADC841AE1D2710043DB9E /* SetPlayersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */; };
-		127E633E1AED160100A729C2 /* PlayerInGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E633D1AED160100A729C2 /* PlayerInGame.m */; };
 		127E63421AED18A200A729C2 /* MafiaMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63401AED18A200A729C2 /* MafiaMeetingViewController.m */; };
 		127E63451AED19E200A729C2 /* MafiaMeetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E63441AED19E200A729C2 /* MafiaMeetingViewController.xib */; };
 		127E63491AED245400A729C2 /* MorningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63471AED245400A729C2 /* MorningViewController.m */; };
 		127E634C1AED246A00A729C2 /* MorningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E634B1AED246A00A729C2 /* MorningViewController.xib */; };
 		127E63501AED2BF900A729C2 /* ButtonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E634E1AED2BF900A729C2 /* ButtonsTableViewCell.m */; };
 		127E63511AED2BF900A729C2 /* ButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */; };
-		127E63541AED354100A729C2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63531AED354100A729C2 /* Game.m */; };
 		127E63581AED803000A729C2 /* NightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63561AED803000A729C2 /* NightViewController.m */; };
 		127E635B1AED804A00A729C2 /* NightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E635A1AED804A00A729C2 /* NightViewController.xib */; };
+		127E635F1AEDBDE200A729C2 /* VoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E635D1AEDBDE200A729C2 /* VoteViewController.m */; };
+		127E63621AEDBE0400A729C2 /* VoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E63611AEDBE0400A729C2 /* VoteViewController.xib */; };
+		127E63661AEE58A800A729C2 /* VoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63641AEE58A800A729C2 /* VoteTableViewCell.m */; };
+		127E63671AEE58A800A729C2 /* VoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E63651AEE58A800A729C2 /* VoteTableViewCell.xib */; };
+		127E636F1AEE6CC600A729C2 /* MainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 127E636E1AEE6CC600A729C2 /* MainMenu.png */; };
 		128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 128433C61AE2E7A100189028 /* CoreDataManager.m */; };
 		12858BD41AEBBE9A005982E8 /* SetRolesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12858BD21AEBBE9A005982E8 /* SetRolesViewController.m */; };
 		12858BD71AEBBED4005982E8 /* SetRolesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12858BD61AEBBED4005982E8 /* SetRolesViewController.xib */; };
@@ -56,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1247559E1AEE88BF00214BF4 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		1247559F1AEE88BF00214BF4 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		124755A11AEE88C000214BF4 /* PlayerInGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInGame.h; sourceTree = "<group>"; };
+		124755A21AEE88C000214BF4 /* PlayerInGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInGame.m; sourceTree = "<group>"; };
 		1268E6F41AE3DCB900319757 /* AddOrChoosePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrChoosePlayerViewController.h; sourceTree = "<group>"; };
 		1268E6F51AE3DCB900319757 /* AddOrChoosePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrChoosePlayerViewController.m; sourceTree = "<group>"; };
 		1268E7001AE3DD7200319757 /* AddOrChoosePlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddOrChoosePlayerViewController.xib; sourceTree = "<group>"; };
@@ -76,8 +85,6 @@
 		126ADC7D1AE1D20F0043DB9E /* NewGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGameViewController.m; sourceTree = "<group>"; };
 		126ADC811AE1D2710043DB9E /* NewGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGameViewController.xib; sourceTree = "<group>"; };
 		126ADC821AE1D2710043DB9E /* SetPlayersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPlayersViewController.xib; sourceTree = "<group>"; };
-		127E633C1AED160100A729C2 /* PlayerInGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInGame.h; sourceTree = "<group>"; };
-		127E633D1AED160100A729C2 /* PlayerInGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInGame.m; sourceTree = "<group>"; };
 		127E633F1AED18A200A729C2 /* MafiaMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MafiaMeetingViewController.h; sourceTree = "<group>"; };
 		127E63401AED18A200A729C2 /* MafiaMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MafiaMeetingViewController.m; sourceTree = "<group>"; };
 		127E63441AED19E200A729C2 /* MafiaMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MafiaMeetingViewController.xib; sourceTree = "<group>"; };
@@ -87,11 +94,16 @@
 		127E634D1AED2BF900A729C2 /* ButtonsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsTableViewCell.h; sourceTree = "<group>"; };
 		127E634E1AED2BF900A729C2 /* ButtonsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsTableViewCell.m; sourceTree = "<group>"; };
 		127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsTableViewCell.xib; sourceTree = "<group>"; };
-		127E63521AED354100A729C2 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		127E63531AED354100A729C2 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		127E63551AED803000A729C2 /* NightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NightViewController.h; sourceTree = "<group>"; };
 		127E63561AED803000A729C2 /* NightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NightViewController.m; sourceTree = "<group>"; };
 		127E635A1AED804A00A729C2 /* NightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightViewController.xib; sourceTree = "<group>"; };
+		127E635C1AEDBDE200A729C2 /* VoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteViewController.h; sourceTree = "<group>"; };
+		127E635D1AEDBDE200A729C2 /* VoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteViewController.m; sourceTree = "<group>"; };
+		127E63611AEDBE0400A729C2 /* VoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoteViewController.xib; sourceTree = "<group>"; };
+		127E63631AEE58A800A729C2 /* VoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteTableViewCell.h; sourceTree = "<group>"; };
+		127E63641AEE58A800A729C2 /* VoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteTableViewCell.m; sourceTree = "<group>"; };
+		127E63651AEE58A800A729C2 /* VoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoteTableViewCell.xib; sourceTree = "<group>"; };
+		127E636E1AEE6CC600A729C2 /* MainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenu.png; sourceTree = "<group>"; };
 		128433C51AE2E7A100189028 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		128433C61AE2E7A100189028 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		12858BD11AEBBE9A005982E8 /* SetRolesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRolesViewController.h; sourceTree = "<group>"; };
@@ -137,10 +149,10 @@
 		1268E6F91AE3DD1900319757 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				127E63521AED354100A729C2 /* Game.h */,
-				127E63531AED354100A729C2 /* Game.m */,
-				127E633C1AED160100A729C2 /* PlayerInGame.h */,
-				127E633D1AED160100A729C2 /* PlayerInGame.m */,
+				124755A11AEE88C000214BF4 /* PlayerInGame.h */,
+				124755A21AEE88C000214BF4 /* PlayerInGame.m */,
+				1247559E1AEE88BF00214BF4 /* Game.h */,
+				1247559F1AEE88BF00214BF4 /* Game.m */,
 				12858BE41AEBC6A2005982E8 /* Player.h */,
 				12858BE51AEBC6A2005982E8 /* Player.m */,
 				3AD6BDDE1AEB95AF0062D1F9 /* Game+Extension.h */,
@@ -174,6 +186,8 @@
 				127E63471AED245400A729C2 /* MorningViewController.m */,
 				127E63551AED803000A729C2 /* NightViewController.h */,
 				127E63561AED803000A729C2 /* NightViewController.m */,
+				127E635C1AEDBDE200A729C2 /* VoteViewController.h */,
+				127E635D1AEDBDE200A729C2 /* VoteViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,6 +205,7 @@
 				12858BD61AEBBED4005982E8 /* SetRolesViewController.xib */,
 				127E63441AED19E200A729C2 /* MafiaMeetingViewController.xib */,
 				127E635A1AED804A00A729C2 /* NightViewController.xib */,
+				127E63611AEDBE0400A729C2 /* VoteViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +213,7 @@
 		126ADC851AE1D7600043DB9E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				127E636E1AEE6CC600A729C2 /* MainMenu.png */,
 				1268E7041AE3FA6100319757 /* circle-user-7.png */,
 				1268E7021AE3F9FB00319757 /* plus-simple-7.png */,
 			);
@@ -212,6 +228,9 @@
 				127E634D1AED2BF900A729C2 /* ButtonsTableViewCell.h */,
 				127E634E1AED2BF900A729C2 /* ButtonsTableViewCell.m */,
 				127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */,
+				127E63631AEE58A800A729C2 /* VoteTableViewCell.h */,
+				127E63641AEE58A800A729C2 /* VoteTableViewCell.m */,
+				127E63651AEE58A800A729C2 /* VoteTableViewCell.xib */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -362,6 +381,7 @@
 				127E634C1AED246A00A729C2 /* MorningViewController.xib in Resources */,
 				126ADC841AE1D2710043DB9E /* SetPlayersViewController.xib in Resources */,
 				3AD7E8171ACFD4B00001914E /* LaunchScreen.xib in Resources */,
+				127E63621AEDBE0400A729C2 /* VoteViewController.xib in Resources */,
 				1268E7031AE3F9FB00319757 /* plus-simple-7.png in Resources */,
 				12858BD71AEBBED4005982E8 /* SetRolesViewController.xib in Resources */,
 				127E63511AED2BF900A729C2 /* ButtonsTableViewCell.xib in Resources */,
@@ -371,6 +391,8 @@
 				1268E7461AE42DEC00319757 /* NewPlayerTabViewController.xib in Resources */,
 				126ADC761AE19C6F0043DB9E /* MainMenuViewController.xib in Resources */,
 				1268E7011AE3DD7200319757 /* AddOrChoosePlayerViewController.xib in Resources */,
+				127E63671AEE58A800A729C2 /* VoteTableViewCell.xib in Resources */,
+				127E636F1AEE6CC600A729C2 /* MainMenu.png in Resources */,
 				3AD7E8141ACFD4B00001914E /* Images.xcassets in Resources */,
 				1268E74D1AE42E3200319757 /* ExistPlayerViewController.xib in Resources */,
 			);
@@ -390,6 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127E635F1AEDBDE200A729C2 /* VoteViewController.m in Sources */,
+				124755A01AEE88BF00214BF4 /* Game.m in Sources */,
 				1268E7431AE42DBC00319757 /* NewPlayerTabViewController.m in Sources */,
 				126ADC701AE19BC30043DB9E /* MainMenuViewController.m in Sources */,
 				127E63501AED2BF900A729C2 /* ButtonsTableViewCell.m in Sources */,
@@ -400,12 +424,12 @@
 				126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */,
 				128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */,
 				127E63581AED803000A729C2 /* NightViewController.m in Sources */,
+				127E63661AEE58A800A729C2 /* VoteTableViewCell.m in Sources */,
 				127E63421AED18A200A729C2 /* MafiaMeetingViewController.m in Sources */,
-				127E633E1AED160100A729C2 /* PlayerInGame.m in Sources */,
 				3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */,
 				3AD6BDE01AEB95AF0062D1F9 /* Game+Extension.m in Sources */,
-				127E63541AED354100A729C2 /* Game.m in Sources */,
 				3AD7E8061ACFD4B00001914E /* main.m in Sources */,
+				124755A31AEE88C000214BF4 /* PlayerInGame.m in Sources */,
 				1268E6F71AE3DCB900319757 /* AddOrChoosePlayerViewController.m in Sources */,
 				126ADC7A1AE1D1F80043DB9E /* SetPlayersViewController.m in Sources */,
 				3AD7E80C1ACFD4B00001914E /* Mafia.xcdatamodeld in Sources */,

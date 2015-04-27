@@ -41,7 +41,7 @@ NSString *const kNameNotificationRolesChanged = @"roleChanged";
     {
         Game *currentGame = [Game currentGame:self.mainContext];
         _players = [[[currentGame players] allObjects] sortedArrayUsingComparator:^NSComparisonResult(PlayerInGame *obj1, PlayerInGame* obj2) {
-            return obj1.number > obj2.number;
+            return [obj1.number integerValue] > [obj2.number integerValue];
         }];
 
     }

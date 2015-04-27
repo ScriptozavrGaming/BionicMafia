@@ -2,7 +2,7 @@
 //  PlayerInGame.m
 //  Mafia
 //
-//  Created by AlexFill on 26.04.15.
+//  Created by AlexFill on 27.04.15.
 //  Copyright (c) 2015 bionic. All rights reserved.
 //
 
@@ -14,10 +14,11 @@
 @implementation PlayerInGame
 
 @dynamic faults;
+@dynamic isAlive;
 @dynamic number;
 @dynamic role;
 @dynamic score;
-@dynamic isAlive;
+@dynamic onVote;
 @dynamic game;
 @dynamic player;
 

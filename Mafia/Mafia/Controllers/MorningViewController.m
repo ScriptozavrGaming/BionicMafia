@@ -8,6 +8,7 @@
 
 #import "MorningViewController.h"
 #import "NightViewController.h"
+#import "VoteViewController.h"
 #import "ButtonsTableViewCell.h"
 #import "Game+Extension.h"
 #import "PlayerInGame.h"
@@ -21,11 +22,15 @@
 @property (nonatomic) NSInteger secondsLeft;
 @property (nonatomic) NSInteger playersToTalk;
 @property (nonatomic, strong) NSMutableArray *playersOnVote;
-
 @property (strong, nonatomic) UIBarButtonItem *startButton;
 @property (strong, nonatomic) UIBarButtonItem *pauseButton;
 
 @end
+
+NSString *const kCitizenRole = @"Citizen";
+NSString *const kComissarRole = @"Comissar";
+NSString *const kMafiaRole = @"Mafia";
+NSString *const kDonRole = @"Don";
 
 @implementation MorningViewController
 
@@ -46,6 +51,7 @@
     }
     self.secondsLeft = 60;
     NSLog(@"%@", [@(self.playersToTalk) stringValue]);
+    [self checkIfGameEnded];
     //[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(playerMinuteStart:)];
     // Do any additional setup after loading the view from its nib.
 }
@@ -61,7 +67,7 @@
     {
         Game *currentGame = [Game currentGame:self.mainContext];
         _players = [[[currentGame players] allObjects] sortedArrayUsingComparator:^NSComparisonResult(PlayerInGame *obj1, PlayerInGame* obj2) {
-            return obj1.number > obj2.number;
+            return [obj1.number integerValue] > [obj2.number integerValue];
         }];
         
     }
@@ -106,6 +112,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"rightDetailCell"];
         cell.textLabel.text = [NSString stringWithFormat:@"Nickname: %@", ((PlayerInGame *)self.players[indexPath.section]).player.nickname];
         cell.detailTextLabel.text = ((PlayerInGame *)self.players[indexPath.section]).role;
+        
     }
     else if (indexPath.row == 1)
     {
@@ -124,10 +131,18 @@
         UIButton *voteButton = ((ButtonsTableViewCell*)cell).takeOnVoteButton;
         [faultButton setTag:[indexPath section]];
         [voteButton setTag:[indexPath section]];
-        if (![(PlayerInGame*)self.players[indexPath.section] isAlive]){
+       
+        if (![(PlayerInGame*)self.players[indexPath.section] isAlive])
+        {
             [faultButton setEnabled:NO];
             [voteButton setEnabled:NO];
-        }else {
+        }
+        else if([(PlayerInGame *)self.players[indexPath.section] onVote])
+        {
+            [voteButton setEnabled:NO];
+        }
+        else
+        {
             [faultButton setEnabled:YES];
             [voteButton setEnabled:YES];
             
@@ -156,7 +171,11 @@
 {
     NSInteger index = [sender tag];
     [sender setEnabled:NO];
+    ((PlayerInGame *)self.players[index]).onVote = [NSNumber numberWithBool:YES];
+    NSError *error = nil;
+    [self.mainContext save:&error];
     [self.playersOnVote addObject:self.players[index]];
+    
 }
 
 - (IBAction)takeFaults:(id)sender
@@ -176,6 +195,7 @@
         [sender setEnabled:NO];
         NSError *error = nil;
         [self.mainContext save:&error];
+        [self checkIfGameEnded];
     }
 //    cell.detailTextLabel.textColor = [UIColor blackColor];
 }
@@ -200,9 +220,32 @@
     
     if (self.playersToTalk == 0 )
     {
-        NightViewController *nightController = [NightViewController new];
-        nightController.mainContext = self.mainContext;
-        [self.navigationController pushViewController:nightController animated:YES];
+        if (self.playersOnVote.count > 1)
+        {
+            NSInteger alivePlayers = 0;
+            for (PlayerInGame *player in self.players){
+                if (player.isAlive) alivePlayers++;
+            }
+            VoteViewController *voteController = [VoteViewController new];
+            voteController.isDuel = NO;
+            voteController.playersOnVote = self.playersOnVote;
+            voteController.mainContext = self.mainContext;
+            voteController.alivePlayers = alivePlayers;
+            [self.navigationController pushViewController:voteController animated:YES];
+        }
+        else
+        {
+            if(self.playersOnVote.count == 1)
+            {
+                ((PlayerInGame *)self.playersOnVote[0]).isAlive = NO;
+                NSError *error = nil;
+                [self.mainContext save:&error];
+            }
+            NightViewController *nightController = [NightViewController new];
+            nightController.mainContext = self.mainContext;
+            [self.navigationController pushViewController:nightController animated:YES];
+        }
+        
     }
 }
 
@@ -215,5 +258,47 @@
     }
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
 }
+
+#pragma mark - check for win
+
+- (void)checkIfGameEnded
+{
+    NSInteger mafiaCount = 0;
+    NSInteger citizenCount = 0;
+    for(PlayerInGame *player in self.players)
+    {
+        if (player.isAlive && ([player.role isEqualToString:kCitizenRole] || [player.role isEqualToString:kComissarRole]))
+        {
+            citizenCount++;
+        }
+        if (player.isAlive && ([player.role isEqualToString:kMafiaRole] || [player.role isEqualToString:kDonRole]))
+        {
+            mafiaCount++;
+        }
+    }
+    UIAlertView *allert = nil;
+    if(mafiaCount>=citizenCount)
+    {
+
+         allert = [[UIAlertView alloc] initWithTitle:@"Game is ended!" message:@"Mafia Win" delegate:self cancelButtonTitle:nil otherButtonTitles:@"FinishGame", nil];
+        [allert show];
+        [Game currentGame:self.mainContext].winner = @"Mafia";
+    }
+    else if(mafiaCount == 0)
+    {
+        allert = [[UIAlertView alloc] initWithTitle:@"Game is ended!" message:@"Citizens Win" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Finish Game", nil];
+        [allert show];
+        [Game currentGame:self.mainContext].winner = @"Citizens";
+    }
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:self.mainContext];
+    NSError *error = nil;
+    [self.mainContext save:&error];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 @end

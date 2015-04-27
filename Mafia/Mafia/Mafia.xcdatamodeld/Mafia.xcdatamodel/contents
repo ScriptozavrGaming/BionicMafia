@@ -4,6 +4,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="round" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="winner" optional="YES" attributeType="String" defaultValueString="None" syncable="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerInGame" inverseName="game" inverseEntity="PlayerInGame" syncable="YES"/>
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES">
@@ -19,14 +20,15 @@
         <attribute name="faults" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="isAlive" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="onVote" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="players" inverseEntity="Game" syncable="YES"/>
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="gameinfoplayer" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Game" positionX="-369" positionY="-27" width="128" height="103"/>
+        <element name="Game" positionX="-369" positionY="-27" width="128" height="120"/>
         <element name="Player" positionX="-27" positionY="-45" width="128" height="150"/>
-        <element name="PlayerInGame" positionX="-189" positionY="-207" width="128" height="148"/>
+        <element name="PlayerInGame" positionX="-189" positionY="-207" width="128" height="165"/>
     </elements>
 </model>

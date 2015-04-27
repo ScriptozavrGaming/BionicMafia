@@ -21,7 +21,7 @@
         game.number = @1;
 
     }else {
-        game = games.lastObject;
+        game = games.firstObject;
         game.number = @(games.count);
     }
     

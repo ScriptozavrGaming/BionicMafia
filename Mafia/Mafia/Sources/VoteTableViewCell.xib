@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="voteCell" id="KGk-i7-Jjw" customClass="VoteTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roU-pB-zkg">
+                        <rect key="frame" x="8" y="11" width="127" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Votes" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyd-U5-uDN">
+                        <rect key="frame" x="204" y="7" width="73" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="roU-pB-zkg" secondAttribute="bottom" constant="3" id="PEl-Z2-Ib1"/>
+                    <constraint firstAttribute="centerY" secondItem="roU-pB-zkg" secondAttribute="centerY" id="acd-pi-ezo"/>
+                    <constraint firstItem="roU-pB-zkg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="ahA-37-YfB"/>
+                    <constraint firstItem="fyd-U5-uDN" firstAttribute="centerY" secondItem="roU-pB-zkg" secondAttribute="centerY" constant="0.5" id="cVg-Vp-VgL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fyd-U5-uDN" secondAttribute="trailing" constant="35" id="dHe-EM-Dbl"/>
+                    <constraint firstItem="roU-pB-zkg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yMD-ph-Orj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="playerOnVoteLabel" destination="roU-pB-zkg" id="yRU-S8-J2T"/>
+                <outlet property="votesTextField" destination="fyd-U5-uDN" id="vhh-jH-mp1"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
