@@ -63,7 +63,6 @@
     else
     {
         [aTimer invalidate];
-        NSLog(@"sobaka ebanaya");
         [self gotoMorning];
     }
 }

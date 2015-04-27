@@ -58,6 +58,7 @@
         NewGameViewController *newGameController = [NewGameViewController new];
         newGameController.mainContext = self.mainContext;
         [[self navigationController] pushViewController:newGameController animated:YES];
+
     }
 }
 

@@ -29,6 +29,8 @@
 		127E63501AED2BF900A729C2 /* ButtonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E634E1AED2BF900A729C2 /* ButtonsTableViewCell.m */; };
 		127E63511AED2BF900A729C2 /* ButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */; };
 		127E63541AED354100A729C2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63531AED354100A729C2 /* Game.m */; };
+		127E63581AED803000A729C2 /* NightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127E63561AED803000A729C2 /* NightViewController.m */; };
+		127E635B1AED804A00A729C2 /* NightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127E635A1AED804A00A729C2 /* NightViewController.xib */; };
 		128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 128433C61AE2E7A100189028 /* CoreDataManager.m */; };
 		12858BD41AEBBE9A005982E8 /* SetRolesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12858BD21AEBBE9A005982E8 /* SetRolesViewController.m */; };
 		12858BD71AEBBED4005982E8 /* SetRolesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12858BD61AEBBED4005982E8 /* SetRolesViewController.xib */; };
@@ -87,6 +89,9 @@
 		127E634F1AED2BF900A729C2 /* ButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonsTableViewCell.xib; sourceTree = "<group>"; };
 		127E63521AED354100A729C2 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		127E63531AED354100A729C2 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		127E63551AED803000A729C2 /* NightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NightViewController.h; sourceTree = "<group>"; };
+		127E63561AED803000A729C2 /* NightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NightViewController.m; sourceTree = "<group>"; };
+		127E635A1AED804A00A729C2 /* NightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NightViewController.xib; sourceTree = "<group>"; };
 		128433C51AE2E7A100189028 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		128433C61AE2E7A100189028 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		12858BD11AEBBE9A005982E8 /* SetRolesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRolesViewController.h; sourceTree = "<group>"; };
@@ -167,6 +172,8 @@
 				127E63401AED18A200A729C2 /* MafiaMeetingViewController.m */,
 				127E63461AED245400A729C2 /* MorningViewController.h */,
 				127E63471AED245400A729C2 /* MorningViewController.m */,
+				127E63551AED803000A729C2 /* NightViewController.h */,
+				127E63561AED803000A729C2 /* NightViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 				1268E74C1AE42E3200319757 /* ExistPlayerViewController.xib */,
 				12858BD61AEBBED4005982E8 /* SetRolesViewController.xib */,
 				127E63441AED19E200A729C2 /* MafiaMeetingViewController.xib */,
+				127E635A1AED804A00A729C2 /* NightViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127E635B1AED804A00A729C2 /* NightViewController.xib in Resources */,
 				127E634C1AED246A00A729C2 /* MorningViewController.xib in Resources */,
 				126ADC841AE1D2710043DB9E /* SetPlayersViewController.xib in Resources */,
 				3AD7E8171ACFD4B00001914E /* LaunchScreen.xib in Resources */,
@@ -390,6 +399,7 @@
 				127E63491AED245400A729C2 /* MorningViewController.m in Sources */,
 				126ADC7F1AE1D20F0043DB9E /* NewGameViewController.m in Sources */,
 				128433C71AE2E7A100189028 /* CoreDataManager.m in Sources */,
+				127E63581AED803000A729C2 /* NightViewController.m in Sources */,
 				127E63421AED18A200A729C2 /* MafiaMeetingViewController.m in Sources */,
 				127E633E1AED160100A729C2 /* PlayerInGame.m in Sources */,
 				3AD7E8091ACFD4B00001914E /* AppDelegate.m in Sources */,

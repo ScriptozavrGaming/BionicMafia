@@ -7,6 +7,7 @@
 //
 
 #import "MorningViewController.h"
+#import "NightViewController.h"
 #import "ButtonsTableViewCell.h"
 #import "Game+Extension.h"
 #import "PlayerInGame.h"
@@ -28,7 +29,8 @@
 
 @implementation MorningViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [_playersTableView registerNib:[UINib nibWithNibName:@"ButtonsTableViewCell" bundle:nil] forCellReuseIdentifier:@"buttonsCell"];
     self.title = @"Morning";
@@ -108,7 +110,7 @@
     else if (indexPath.row == 1)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"rightDetailCell"];
-        NSString *status = (![((PlayerInGame *)self.players[indexPath.section]).isAlive  isEqual: @(0)])?
+        NSString *status = (((PlayerInGame *)self.players[indexPath.section]).isAlive != nil)?
         @"Alive" : @"Dead";
         cell.textLabel.text = [NSString stringWithFormat:@"Status: %@", status];
         NSNumber *faults = ((PlayerInGame *)self.players[indexPath.section]).faults;
@@ -172,6 +174,8 @@
         ((PlayerInGame*)self.players[index]).isAlive = NO;
         [self.playersTableView cellForRowAtIndexPath:indexPath].textLabel.text = @"Status: Dead";
         [sender setEnabled:NO];
+        NSError *error = nil;
+        [self.mainContext save:&error];
     }
 //    cell.detailTextLabel.textColor = [UIColor blackColor];
 }
@@ -190,11 +194,15 @@
     [self.timer invalidate];
     self.secondsLeft = 60;
     self.title = @"1:00";
+    NSLog(@"finish talk %@", [@(self.playersToTalk) stringValue]);
     self.playersToTalk--;
-    //    NSLog(@"%@", [@(self.playersToTalk) stringValue]);
     
-    if (self.playersToTalk >0 ) {
-        
+    
+    if (self.playersToTalk == 0 )
+    {
+        NightViewController *nightController = [NightViewController new];
+        nightController.mainContext = self.mainContext;
+        [self.navigationController pushViewController:nightController animated:YES];
     }
 }
 
