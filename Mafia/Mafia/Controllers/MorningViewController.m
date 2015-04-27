@@ -279,13 +279,54 @@ NSString *const kDonRole = @"Don";
     UIAlertView *allert = nil;
     if(mafiaCount>=citizenCount)
     {
-
-         allert = [[UIAlertView alloc] initWithTitle:@"Game is ended!" message:@"Mafia Win" delegate:self cancelButtonTitle:nil otherButtonTitles:@"FinishGame", nil];
+        for(PlayerInGame *playerAtEnd in self.players)
+        {
+            if([playerAtEnd.role isEqualToString:kMafiaRole])
+            {
+                playerAtEnd.score = @(3);
+                NSNumber *rating = @([playerAtEnd.player.rating integerValue] + [playerAtEnd.score integerValue]);
+                playerAtEnd.player.rating = rating;
+            }
+            if([playerAtEnd.role isEqualToString:kDonRole])
+            {
+                playerAtEnd.score = @(4);
+                NSNumber *rating = @([playerAtEnd.player.rating integerValue] + [playerAtEnd.score integerValue]);
+                playerAtEnd.player.rating = rating;
+            }
+            if([playerAtEnd.role isEqualToString:kComissarRole])
+            {
+                playerAtEnd.score = @(-1);
+                NSNumber *rating = @([playerAtEnd.player.rating integerValue] + [playerAtEnd.score integerValue]);
+                playerAtEnd.player.rating = rating;
+            }
+        }
+         allert = [[UIAlertView alloc] initWithTitle:@"Game is ended!" message:@"Mafia Win" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Finish Game", nil];
         [allert show];
         [Game currentGame:self.mainContext].winner = @"Mafia";
     }
     else if(mafiaCount == 0)
     {
+        for(PlayerInGame *playerAtEnd in self.players)
+        {
+            if([playerAtEnd.role isEqualToString:kComissarRole])
+            {
+                playerAtEnd.score = @(4);
+                NSNumber *rating = @([playerAtEnd.player.rating integerValue] + [playerAtEnd.score integerValue]);
+                playerAtEnd.player.rating = rating;
+            }
+            if([playerAtEnd.role isEqualToString:kCitizenRole])
+            {
+                playerAtEnd.score = @(2);
+                NSNumber *rating = @([playerAtEnd.player.rating integerValue] + [playerAtEnd.score integerValue]);
+                playerAtEnd.player.rating = rating;
+            }
+            if([playerAtEnd.role isEqualToString:kDonRole])
+            {
+                playerAtEnd.score = @(-1);
+                NSNumber *rating = @([playerAtEnd.player.rating integerValue] + [playerAtEnd.score integerValue]);
+                playerAtEnd.player.rating = rating;
+            }
+        }
         allert = [[UIAlertView alloc] initWithTitle:@"Game is ended!" message:@"Citizens Win" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Finish Game", nil];
         [allert show];
         [Game currentGame:self.mainContext].winner = @"Citizens";

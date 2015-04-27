@@ -9,6 +9,7 @@
 #import "MainMenuViewController.h"
 #import "NewGameViewController.h"
 #import "SetPlayersViewController.h"
+#import "StatisticViewController.h"
 #import "AppDelegate.h"
 #import "Game+Extension.h"
 
@@ -60,6 +61,18 @@
         [[self navigationController] pushViewController:newGameController animated:YES];
 
     }
+}
+
+- (IBAction)statisticButtonTouched:(id)sender
+{
+    StatisticViewController *statisticController = [StatisticViewController new];
+    statisticController.mainContext = self.mainContext;
+    [self.navigationController pushViewController:statisticController animated:YES];
+}
+
+- (IBAction)rulesButtonTouched:(id)sender
+{
+    
 }
 
 - (NSManagedObjectContext *)mainContext

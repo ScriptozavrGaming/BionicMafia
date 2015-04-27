@@ -52,20 +52,15 @@
                     <state key="normal" title="Statistic">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="statisticButtonTouched:" destination="-2" eventType="touchDown" id="1QM-Nh-bB9"/>
+                    </connections>
                 </button>
                 <button opaque="NO" alpha="0.59999999999999964" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acq-1q-gbr">
                     <rect key="frame" x="0.0" y="276" width="320" height="36"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Rules">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" alpha="0.59999999999999964" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndm-SM-dhY">
-                    <rect key="frame" x="0.0" y="314" width="320" height="36"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="List Of All Players">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -82,21 +77,12 @@
                 <constraint firstItem="acq-1q-gbr" firstAttribute="width" secondItem="Oln-OX-gp2" secondAttribute="width" id="eTo-ce-04e"/>
                 <constraint firstItem="a5f-V9-RxB" firstAttribute="centerX" secondItem="Oln-OX-gp2" secondAttribute="centerX" id="gme-rn-LGt"/>
                 <constraint firstItem="Oln-OX-gp2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hJG-cv-zD1"/>
-                <constraint firstItem="ndm-SM-dhY" firstAttribute="top" secondItem="acq-1q-gbr" secondAttribute="bottom" constant="2" id="jYT-dm-T44"/>
-                <constraint firstItem="ndm-SM-dhY" firstAttribute="top" secondItem="acq-1q-gbr" secondAttribute="bottom" constant="4" id="prB-F3-Fn5"/>
                 <constraint firstItem="a5f-V9-RxB" firstAttribute="top" secondItem="Oln-OX-gp2" secondAttribute="bottom" constant="2" id="tZ5-Rg-Gkg"/>
                 <constraint firstItem="acq-1q-gbr" firstAttribute="centerX" secondItem="Oln-OX-gp2" secondAttribute="centerX" id="tjb-p8-gRw"/>
-                <constraint firstItem="ndm-SM-dhY" firstAttribute="centerX" secondItem="Oln-OX-gp2" secondAttribute="centerX" id="uHK-jc-LpH"/>
-                <constraint firstItem="ndm-SM-dhY" firstAttribute="width" secondItem="Oln-OX-gp2" secondAttribute="width" id="weE-Bb-jMc"/>
                 <constraint firstAttribute="trailing" secondItem="Oln-OX-gp2" secondAttribute="trailing" id="xIW-S5-eUg"/>
                 <constraint firstItem="acq-1q-gbr" firstAttribute="top" secondItem="IJ3-pW-nLZ" secondAttribute="bottom" constant="2" id="xoy-hx-rRT"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="prB-F3-Fn5"/>
-                </mask>
-            </variation>
         </view>
     </objects>
     <resources>
