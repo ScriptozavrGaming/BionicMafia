@@ -7,9 +7,10 @@
 //
 
 #import "StatisticViewController.h"
+#import "PlayerInfoViewController.h"
 #import "Player.h"
 
-@interface StatisticViewController () <UITableViewDataSource>
+@interface StatisticViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *players;
 
@@ -53,7 +54,7 @@
 {
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"setPlayerCell"];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@.%@",[@(indexPath.row + 1) stringValue],((Player *)self.players[indexPath.row]).nickname];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@.  %@",[@(indexPath.row + 1) stringValue],((Player *)self.players[indexPath.row]).nickname];
     cell.textLabel.textAlignment = NSTextAlignmentLeft;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ points",
                                  [((Player *)self.players[indexPath.row]).rating stringValue]];
@@ -61,5 +62,16 @@
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
+
+#pragma mark - table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PlayerInfoViewController *infoController = [PlayerInfoViewController new];
+    infoController.player = self.players[indexPath.row];
+    infoController.mainContext = self.mainContext;
+    [self.navigationController pushViewController:infoController animated:YES];
+}
+
 
 @end

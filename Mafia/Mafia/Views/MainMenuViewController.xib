@@ -63,6 +63,9 @@
                     <state key="normal" title="Rules">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="rulesButtonTouched:" destination="-2" eventType="touchDown" id="thL-r8-kmK"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

@@ -10,6 +10,7 @@
 #import "NewGameViewController.h"
 #import "SetPlayersViewController.h"
 #import "StatisticViewController.h"
+#import "RulesViewController.h"
 #import "AppDelegate.h"
 #import "Game+Extension.h"
 
@@ -24,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.title = @"Main Menu";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -72,7 +73,8 @@
 
 - (IBAction)rulesButtonTouched:(id)sender
 {
-    
+    RulesViewController *rulesController = [RulesViewController new];
+    [self.navigationController pushViewController:rulesController animated:YES];
 }
 
 - (NSManagedObjectContext *)mainContext

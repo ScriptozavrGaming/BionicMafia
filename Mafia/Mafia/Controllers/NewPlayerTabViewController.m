@@ -8,11 +8,17 @@
 
 #import "NewPlayerTabViewController.h"
 
-@interface NewPlayerTabViewController ()
+@interface NewPlayerTabViewController () <UITextFieldDelegate>
 
 @end
 
 @implementation NewPlayerTabViewController
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

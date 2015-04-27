@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" id="pcc-hG-fcr" customClass="PlayerInfoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pcc-hG-fcr" id="tSr-VR-FwM">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcd-9q-HDz">
+                        <rect key="frame" x="8" y="11" width="89" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="text" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5mp-LC-cy1">
+                        <rect key="frame" x="105" y="7" width="207" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="ZQa-cv-KeV"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rcd-9q-HDz" firstAttribute="leading" secondItem="tSr-VR-FwM" secondAttribute="leadingMargin" id="0T8-aK-q4x"/>
+                    <constraint firstItem="rcd-9q-HDz" firstAttribute="top" secondItem="tSr-VR-FwM" secondAttribute="topMargin" constant="3" id="K3W-yp-K6w"/>
+                    <constraint firstAttribute="centerY" secondItem="rcd-9q-HDz" secondAttribute="centerY" id="hJV-rP-fIr"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rcd-9q-HDz" secondAttribute="bottom" constant="3" id="mLE-rb-8iD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="infoTextField" destination="5mp-LC-cy1" id="4wO-rx-51l"/>
+                <outlet property="leftLabel" destination="rcd-9q-HDz" id="mOD-CF-wIN"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

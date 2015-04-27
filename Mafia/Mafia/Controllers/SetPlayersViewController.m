@@ -23,6 +23,7 @@ NSInteger const kCountOfPlayers = 10;
 
 @property (nonatomic) NSInteger choosedControllerIndex;
 @property (nonatomic, strong) NSMutableArray *addOrChooseControllers;
+@property (nonatomic, strong) NSArray *players;
 
 @end
 
@@ -69,8 +70,7 @@ NSString *const kUnsetPlayer = @"Unset";
         NSString *nickname = nil;
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
         nickname = [_playersTableView cellForRowAtIndexPath:indexPath].detailTextLabel.text;
-//        if([nickname isEqualToString:kUnsetPlayer])
-        if (NO)
+        if([nickname isEqualToString:kUnsetPlayer])
         {
             isUnset = YES;
         }
@@ -114,6 +114,19 @@ NSString *const kUnsetPlayer = @"Unset";
 
 }
 
+- (NSArray *) players
+{
+    if (nil == _players)
+    {
+        Game *currentGame = [Game currentGame:self.mainContext];
+        _players = [[[currentGame players] allObjects] sortedArrayUsingComparator:^NSComparisonResult(PlayerInGame *obj1, PlayerInGame* obj2) {
+            return [obj1.number integerValue] > [obj2.number integerValue];
+        }];
+        
+    }
+    return _players;
+}
+
 - (NSMutableArray *)addOrChooseControllers
 {
     if(nil == _addOrChooseControllers)
@@ -149,10 +162,16 @@ NSString *const kUnsetPlayer = @"Unset";
 //    cell.numberLabel.text = [NSString stringWithFormat:@"Player %@",[@(indexPath.row + 1) stringValue]];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"setPlayerCell"];
     cell.textLabel.text = [NSString stringWithFormat:@"Player %@",[@(indexPath.row + 1) stringValue]];
-    cell.detailTextLabel.text = kUnsetPlayer;
-    cell.detailTextLabel.textColor = [UIColor redColor];
+    cell.detailTextLabel.text = ([self.players isEqual:@[]])? kUnsetPlayer :
+                                                       ((PlayerInGame *)self.players[indexPath.row]).player.nickname;
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return self.title;
 }
 
 #pragma  mark - Table View Delegate
