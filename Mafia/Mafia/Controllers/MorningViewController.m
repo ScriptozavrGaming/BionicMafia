@@ -335,7 +335,9 @@ NSString *const kDonRole = @"Don";
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:self.mainContext];
+    NSNumber *currentGameNumber = [Game currentGame:self.mainContext].number;
+    Game *game = [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:self.mainContext];
+    game.number = [NSNumber numberWithInteger:[currentGameNumber integerValue] + 1];
     NSError *error = nil;
     [self.mainContext save:&error];
     [self.navigationController popToRootViewControllerAnimated:YES];

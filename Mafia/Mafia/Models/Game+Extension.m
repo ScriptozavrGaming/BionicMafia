@@ -21,8 +21,8 @@
         game.number = @1;
 
     }else {
-        game = games.firstObject;
-        game.number = @(games.count);
+        game = games.lastObject;
+        //game.number = @(games.count);
     }
     
     game.name = [NSString stringWithFormat:@"Game %@" ,game.number];

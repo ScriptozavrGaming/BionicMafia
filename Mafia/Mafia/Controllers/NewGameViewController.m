@@ -130,7 +130,7 @@ NSString *const kNameNotificationRolesChanged = @"roleChanged";
 
     //    PlayerInGame * pig =player[indexPath.row];
 //    Player* p = pig.player;
-    cell.textLabel.text = [NSString stringWithFormat:@"%d.  %@",indexPath.row,((Player*)[(PlayerInGame *)self.players[indexPath.row] player]).nickname];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d.  %@",indexPath.row+1,((Player*)[(PlayerInGame *)self.players[indexPath.row] player]).nickname];
     cell.detailTextLabel.text = @"None";
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
