@@ -63,6 +63,7 @@
     return cell;
 }
 
+
 #pragma mark - table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,6 +72,7 @@
     infoController.player = self.players[indexPath.row];
     infoController.mainContext = self.mainContext;
     [self.navigationController pushViewController:infoController animated:YES];
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
 }
 
 

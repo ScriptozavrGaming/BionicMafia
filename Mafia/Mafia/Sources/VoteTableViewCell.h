@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface VoteTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *playerOnVoteLabel;
 @property (weak, nonatomic) IBOutlet UITextField *votesTextField;
 

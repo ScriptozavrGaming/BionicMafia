@@ -156,6 +156,10 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"Alive players:%d",self.alivePlayers];
+}
 
 
 @end

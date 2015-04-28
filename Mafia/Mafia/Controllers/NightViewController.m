@@ -11,12 +11,18 @@
 #import "Game+Extension.h"
 #import "PlayerInGame.h"
 #import "Player.h"
+#import <MediaPlayer/MediaPlayer.h>
+//#import <AVFoundation/AVFoundation.h>
 
-@interface NightViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface NightViewController () <UIPickerViewDataSource, UIPickerViewDelegate, MPMediaPickerControllerDelegate>
 
 @property (strong, nonatomic) NSArray *players;
 @property (strong, nonatomic) NSMutableArray *alivePlayers;
 @property (nonatomic) NSInteger indexOfKilledPlayer;
+@property (weak, nonatomic) IBOutlet UILabel *songLabel;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (strong, nonatomic) MPMusicPlayerController *musicPlayer;
 
 @end
 
@@ -34,6 +40,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (MPMusicPlayerController *)musicPlayer
+{
+    if(nil == _musicPlayer)
+    {
+        _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+    }
+    return _musicPlayer;
 }
 
 - (NSArray *) players
@@ -76,6 +91,7 @@
     }
     MorningViewController *morningController = [MorningViewController new];
     morningController.mainContext = self.mainContext;
+    [self.musicPlayer stop];
     [self.navigationController pushViewController:morningController animated:YES];
 }
 
@@ -109,6 +125,49 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.indexOfKilledPlayer = row;
+}
+
+#pragma mark - work with music
+
+- (IBAction)loadSongButtonTouched:(id)sender
+{
+    MPMediaPickerController *picker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
+{
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
+{
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+    [mediaItemCollection items];
+    [self.musicPlayer setQueueWithItemCollection:mediaItemCollection];
+    [self.musicPlayer setNowPlayingItem:((MPMediaItem *)mediaItemCollection.items[0])];
+    self.songLabel.text = [NSString stringWithFormat:@"%@ - %@",((MPMediaItem *)mediaItemCollection.items[0]).artist,((MPMediaItem *)mediaItemCollection.items[0]).title];
+    [self.musicPlayer play];
+    [self.playButton setAlpha:1.0];
+    [self.pauseButton setAlpha:1.0];
+    [self.playButton setEnabled:NO];
+    //AVAudioPlayer *player =[[AVAudioPlayer alloc] initWithContentsOfURL:outURL error:&error];
+    //[player play];
+}
+
+- (IBAction)playButtonTouched:(id)sender
+{
+    [self.musicPlayer play];
+    [self.playButton setEnabled:NO];
+    [self.pauseButton setEnabled:YES];
+}
+
+- (IBAction)pauseButtonTouched:(id)sender
+{
+    [self.musicPlayer pause];
+    [self.playButton setEnabled:YES];
+    [self.pauseButton setEnabled:NO];
 }
 
 @end

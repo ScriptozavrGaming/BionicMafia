@@ -71,7 +71,7 @@ CGFloat const kTabBarHeight = 49;
         [self.navigationController popViewControllerAnimated:YES];
     }else{
         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Input error"
-                message:@"Nickname needed or player with this nickname already exist" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                message:@"Nickname needed or player with this nickname already exist" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [view show];
         
     }

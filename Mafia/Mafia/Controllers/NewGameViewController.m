@@ -126,13 +126,19 @@ NSString *const kNameNotificationRolesChanged = @"roleChanged";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:
-                             UITableViewCellStyleValue2 reuseIdentifier:@"setRoleCell"];
+                             UITableViewCellStyleValue1 reuseIdentifier:@"setRoleCell"];
 
     //    PlayerInGame * pig =player[indexPath.row];
 //    Player* p = pig.player;
-    cell.textLabel.text = ((Player*)[(PlayerInGame *)self.players[indexPath.row] player]).nickname;
+    cell.textLabel.text = [NSString stringWithFormat:@"%d.  %@",indexPath.row,((Player*)[(PlayerInGame *)self.players[indexPath.row] player]).nickname];
     cell.detailTextLabel.text = @"None";
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return @"Choose roles";
 }
 
 #pragma mark - table view delegate

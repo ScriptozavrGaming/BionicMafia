@@ -77,7 +77,7 @@ NSString *const kUnsetPlayer = @"Unset";
     }
     if(isUnset)
     {
-        UIAlertView *allert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Some players don't set" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView *allert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Some players don't set" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [allert show];
     }
     else
@@ -160,11 +160,11 @@ NSString *const kUnsetPlayer = @"Unset";
 {
 //    SetPlayerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"setPlayerCell" forIndexPath:indexPath];
 //    cell.numberLabel.text = [NSString stringWithFormat:@"Player %@",[@(indexPath.row + 1) stringValue]];
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"setPlayerCell"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"setPlayerCell"];
     cell.textLabel.text = [NSString stringWithFormat:@"Player %@",[@(indexPath.row + 1) stringValue]];
     cell.detailTextLabel.text = ([self.players isEqual:@[]])? kUnsetPlayer :
                                                        ((PlayerInGame *)self.players[indexPath.row]).player.nickname;
-    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    //cell.textLabel.textAlignment = NSTextAlignmentLeft;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
