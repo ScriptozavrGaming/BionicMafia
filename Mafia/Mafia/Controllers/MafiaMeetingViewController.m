@@ -25,8 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Mafia First Meet";
-    
+#warning just for git test
     [[self timerLabel] setText:@"1:00"];
+    self.seconds = 60;
+    self.seconds = 60;
     self.seconds = 60;
     // Do any additional setup after loading the view from its nib.
 }
